@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>FrontControleur</servlet-name>
+        <servlet-class>controleurs.FrontControleur</servlet-class>
+        <!--
+        
+        <init-param>
+            <param-name>operations-panier</param-name>
+            <param-value>controleurs.secondaires.OperationsPanierCtrl</param-value>
+        </init-param>
+        <init-param>
+            <param-name>panier-affichage</param-name>
+            <param-value>controleurs.secondaires.PanierAffichageCtrl</param-value>
+        </init-param>
+        -->
+        <init-param>
+            <param-name>affichage-carte</param-name>
+            <param-value>controleurs.client.CarteAffichageCtrl</param-value>
+        </init-param>
+        
+        <init-param>
+            <param-name>donnees-create</param-name>
+            <param-value>controleurs.DonneesCreateCtrl</param-value>
+        </init-param>
+        
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FrontControleur</servlet-name>
+        <url-pattern>/FrontControleur</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    
+    <ejb-local-ref>
+        <ejb-ref-name>GestionCatalogue</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>com.gp2.metiers.GestionCatalogueLocal</local>
+        <ejb-link>restaurant-ejb.jar#GestionCatalogue</ejb-link>
+    </ejb-local-ref>
+    
+    <ejb-local-ref>
+        <ejb-ref-name>CreationData</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>com.gp2.data.CreationDataLocal</local>
+        <ejb-link>restaurant-ejb.jar#CreationData</ejb-link>
+    </ejb-local-ref>
+    
+    <ejb-local-ref>
+        <ejb-ref-name>GestionCatalogue1</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>com.gp2.metiers.GestionCatalogueLocal</local>
+        <ejb-link>restaurant-ejb.jar#GestionCatalogue</ejb-link>
+    </ejb-local-ref>
+    
+    <ejb-local-ref>
+        <ejb-ref-name>GestionPersonnel</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>com.gp2.metiers.GestionPersonnelLocal</local>
+        <ejb-link>restaurant-ejb.jar#GestionPersonnel</ejb-link>
+    </ejb-local-ref>
+    
+<!--    <ejb-local-ref>
+        <ejb-ref-name>GestionProduit</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>com.gp2.beans.GestionProduitLocal</local>
+        <ejb-link>restaurant-ejb.jar#GestionProduit</ejb-link>
+    </ejb-local-ref>-->
+    
+</web-app>

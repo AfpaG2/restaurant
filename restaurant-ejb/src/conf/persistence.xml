@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="restaurant-ejbPU" transaction-type="JTA">
+    <jta-data-source>jdbc/restaurantDS</jta-data-source>
+    <class>com.gp2.persistence.Statut</class>
+    <class>com.gp2.persistence.carte.Formule</class>
+    <class>com.gp2.persistence.carte.Produit</class>
+    <class>com.gp2.persistence.carte.InfosNutritionnelle</class>
+    <class>com.gp2.persistence.carte.Carte</class>
+    <class>com.gp2.persistence.carte.NatureProduit</class>
+    <class>com.gp2.persistence.carte.Promotion</class>
+    <class>com.gp2.persistence.carte.TypePlat</class>
+    <class>com.gp2.persistence.carte.CodeTVA</class>
+    <class>com.gp2.persistence.carte.Ingredient</class>
+    <class>com.gp2.persistence.carte.InfosProduit</class>
+    <class>com.gp2.persistence.commande.LigneCommande</class>
+    <class>com.gp2.persistence.commande.TypePaiement</class>
+    <class>com.gp2.persistence.commande.Commande</class>
+    <class>com.gp2.persistence.commande.Emplacement</class>
+    <class>com.gp2.persistence.commande.InfosCuisine</class>
+    <class>com.gp2.persistence.commande.Paiement</class>
+    <class>com.gp2.persistence.company.Restaurant</class>
+    <class>com.gp2.persistence.company.Employe</class>
+    <class>com.gp2.persistence.company.Poste</class>
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+    </properties>
+  </persistence-unit>
+</persistence>
