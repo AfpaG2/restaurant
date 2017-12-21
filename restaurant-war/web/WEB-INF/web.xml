@@ -15,6 +15,10 @@
         </init-param>
         -->
         <init-param>
+            <param-name>catalogue</param-name>
+            <param-value>controleurs.client.CarteMainCtrl</param-value>
+        </init-param>
+        <init-param>
             <param-name>affichage-carte</param-name>
             <param-value>controleurs.client.CarteAffichageCtrl</param-value>
         </init-param>

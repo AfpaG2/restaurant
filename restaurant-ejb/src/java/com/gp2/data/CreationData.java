@@ -1132,19 +1132,19 @@ public class CreationData implements CreationDataLocal {
         formule01.setStatut(statut5001);
         formule01.setCarte(carte);
         
-        TypePlat formule01Entree = new TypePlat("Entrée dragon d'Or");        
+        TypePlat formule01Entree = new TypePlat("ENTREES");        
         formule01Entree.getProduits().add(prdu3);
         formule01Entree.getProduits().add(prdu4);
         formule01Entree.getProduits().add(prdu5);
         formule01.getTypePlats().add(formule01Entree);
         
-        TypePlat formule01Plat = new TypePlat("Plat Dragon d'Or");        
+        TypePlat formule01Plat = new TypePlat("PLATS");        
         formule01Plat.getProduits().add(produ1);
         formule01Plat.getProduits().add(produ5);
         formule01Plat.getProduits().add(produ8);
         formule01.getTypePlats().add(formule01Plat);
         
-        TypePlat formule01Dessert = new TypePlat("Déssert Dragon d'Or");        
+        TypePlat formule01Dessert = new TypePlat("DESSERTS");        
         formule01Dessert.getProduits().add(produi4);
         formule01Dessert.getProduits().add(produi6);
         formule01Dessert.getProduits().add(produi10);
@@ -1155,12 +1155,12 @@ public class CreationData implements CreationDataLocal {
         formule02.setStatut(statut5001);
         formule02.setCarte(carte);
         
-        TypePlat formule02Entree = new TypePlat("Entrée le fière Goéland");        
+        TypePlat formule02Entree = new TypePlat("ENTREES");        
         formule02Entree.getProduits().add(prdu1);
         formule02Entree.getProduits().add(prdu3); 
         formule02.getTypePlats().add(formule02Entree);
         
-        TypePlat formule02Plat = new TypePlat("Plat le fière Goéland");        
+        TypePlat formule02Plat = new TypePlat("PLATS");        
         formule02Plat.getProduits().add(produ4);
         formule02Plat.getProduits().add(produ6);
         formule02Plat.getProduits().add(produ8);
@@ -1171,13 +1171,13 @@ public class CreationData implements CreationDataLocal {
         formule03.setStatut(statut5001);
         formule03.setCarte(carte);
         
-        TypePlat formule03Plat = new TypePlat("Plat le fière Goéland");        
+        TypePlat formule03Plat = new TypePlat("PLATS");        
         formule03Plat.getProduits().add(produ3);
         formule03Plat.getProduits().add(produ7);
         formule03Plat.getProduits().add(produ8);
         formule03.getTypePlats().add(formule03Plat);
         
-        TypePlat formule03Dessert = new TypePlat("Dessert dragon d'or");         
+        TypePlat formule03Dessert = new TypePlat("DESSERTS");         
         formule03Dessert.getProduits().add(produi4);
         formule03Dessert.getProduits().add(produi5);
         formule03Dessert.getProduits().add(produi8);

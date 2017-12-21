@@ -21,7 +21,10 @@ import javax.persistence.OneToMany;
 @Entity
 @NamedQueries({
     @NamedQuery(name = "com.gp2.persistence.carte.Formule.findAllFormule", query = "select f from Formule f"),
-    @NamedQuery(name = "com.gp2.persistence.carte.Formule.findFormuleById", query ="select f from Formule f where f.id=:paramId")
+    @NamedQuery(name = "com.gp2.persistence.carte.Formule.findAllProduitsByFormule", query ="select  p from "
+            + "Formule f JOIN f.typePlats t join t.produits p where f.id =:paramId and t.nomTypePlat =:paramTypePlat"),
+    @NamedQuery(name = "com.gp2.persistence.carte.Formule.findAllTypePlatByFormule", query ="select  t.nomTypePlat from "
+            + "Formule f JOIN f.typePlats t join t.produits p where f.id =:paramId")
 })
 public class Formule implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -97,6 +100,10 @@ public class Formule implements Serializable {
 
     public void setPrix(float prix) {
         this.prix = prix;
+    }
+    
+    public float getPrixTTC() {
+        return Math.round(this.prix * (1 + this.getCodeTVA().getTauxTVA() / 100) * 100.0f) / 100.0f;
     }
 
     public String getImage() {

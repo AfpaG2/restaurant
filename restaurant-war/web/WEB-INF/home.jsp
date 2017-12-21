@@ -12,6 +12,12 @@
         <div>
             <c:url value="FrontControleur?section=donnees-create" var="url01" />
             <a href="${url01}">créer les données</a> |
+            <c:url value="FrontControleur?section=catalogue&category=formule" var="url02" />
+            <a href="${url02}">Nos formules</a> |
+            <c:url value="FrontControleur?section=catalogue&category=natureProduit" var="url03" />
+            <a href="${url03}">Par Nature de produit</a> |
+            <c:url value="FrontControleur?section=affichage-carte" var="url03" />
+            <a href="${url03}">Par Type de plats</a> |
         </div>   
 
         <div>
