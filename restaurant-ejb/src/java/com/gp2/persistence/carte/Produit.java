@@ -115,6 +115,7 @@ public class Produit implements Serializable {
     public void setPrix(float prix) {
         this.prix = prix;
     }
+   
 
     public String getImage() {
         return image;

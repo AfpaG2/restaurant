@@ -34,9 +34,7 @@ public class CarteAffichageCtrl implements SousControleur {
         // Gestion de la pagination
         int maxEntriesPerPage = 5;
         int pageNumber = 1;
-
         String pageNumberValue = request.getParameter("pageNumber");
-
         if (pageNumberValue != null) {
             try {
                 pageNumber = Integer.parseInt(pageNumberValue);

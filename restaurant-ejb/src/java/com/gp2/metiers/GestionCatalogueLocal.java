@@ -12,6 +12,7 @@ import com.gp2.persistence.carte.Produit;
 import com.gp2.persistence.carte.TypePlat;
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 import javax.ejb.Local;
 
 /**
@@ -25,5 +26,5 @@ public interface GestionCatalogueLocal {
      public Collection<Formule>  getAllFormules();
      public Collection<TypePlat>  getAllProduitsByTypePlat();
      public List<Produit> findAllProduits(int firstResult, int maxResult, String typePlat);
-    
+    public Map<String, Collection<Produit>>  getAllProduitsByFormule(Long formuleId);
 }
