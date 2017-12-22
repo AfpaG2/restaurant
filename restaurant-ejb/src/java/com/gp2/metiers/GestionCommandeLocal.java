@@ -18,7 +18,7 @@ import javax.ejb.Local;
 public interface GestionCommandeLocal {
     public Commande createCommande(Commande uneCommande);
     public Commande getCommande(String id);
-    public Commande getAllCommandes();
+    public Collection<Commande> getAllCommandes();
     public Commande changeStatutCommande(Commande commande);
     public Commande modifierCommande(Commande commande);
     
