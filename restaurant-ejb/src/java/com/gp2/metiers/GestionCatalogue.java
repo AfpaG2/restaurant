@@ -28,6 +28,10 @@ public class GestionCatalogue implements GestionCatalogueLocal {
 
     public Collection<NatureProduit> getAllProduitsByNature() {
         return null;
+    public Collection<NatureProduit> getAllProduitsByNature(String nomNatureProduit) {
+        Query qr = em.createNamedQuery("com.gp2.persistence.carte.NatureProduit.findAllProduitsByNatureProduit");
+        qr.setParameter("paramNatureProduit", nomNatureProduit);
+        return qr.getResultList();
     }
 
     public Collection<Formule> getAllFormules() {

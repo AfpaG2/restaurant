@@ -23,6 +23,7 @@ import javax.ejb.Local;
 public interface GestionCatalogueLocal {
     public Carte getAllCarte();
     public Collection<NatureProduit> getAllProduitsByNature();
+     public Collection<NatureProduit> getAllProduitsByNature(String nomNatureProduit);
      public Collection<Formule>  getAllFormules();
      public Collection<TypePlat>  getAllProduitsByTypePlat();
      public List<Produit> findAllProduits(int firstResult, int maxResult, String typePlat);

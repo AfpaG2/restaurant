@@ -17,6 +17,8 @@ import javax.persistence.OneToMany;
 @Entity
 @NamedQueries({
     @NamedQuery(name = "com.gp2.persistence.carte.NatureProduit.findAllNatureProduit", query = "select n from NatureProduit n"),
+    @NamedQuery(name = "com.gp2.persistence.carte.NatureProduit.findAllProduitsByNatureProduit", 
+            query = "select p from NatureProduit n join n.produits p where n.nomNatureProduit=:paramNatureProduit"),
     @NamedQuery(name = "com.gp2.persistence.carte.NatureProduit.findNatureProduitById", query ="select n from NatureProduit n where n.nomNatureProduit=:paramNomNatureProduit")
 })
 public class NatureProduit implements Serializable {

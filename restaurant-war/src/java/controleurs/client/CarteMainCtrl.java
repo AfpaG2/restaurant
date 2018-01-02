@@ -23,6 +23,7 @@ public class CarteMainCtrl implements SousControleur {
         GestionCatalogueLocal gestionCatalogue = lookupGestionCatalogueLocal();
         String category = request.getParameter("category");
         String reference = request.getParameter("ref");
+        String nomNatureProduit = request.getParameter("nomNatureProduit");
         String page = "/WEB-INF/home.jsp";
 
         if ("formule".equals(category)) {
@@ -40,6 +41,7 @@ public class CarteMainCtrl implements SousControleur {
                 page = "/WEB-INF/natureProduit-detail.jsp";
             } else {
                 request.setAttribute("natureProduits", gestionCatalogue.getAllProduitsByNature());
+                request.setAttribute("natureProduits", gestionCatalogue.getAllProduitsByNature(nomNatureProduit));
                 page = "FrontControleur?section=natureProduit-affichage";
 
             }
