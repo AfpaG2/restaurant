@@ -1,8 +1,3 @@
-<%-- 
-    Document   : newfooter
-    Created on : Dec 20, 2017, 10:20:16 PM
-    Author     : Ibrahim Kelani <ibrahim.kelani@gmail.com>
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -38,7 +33,40 @@
             $('.bt-menu').removeClass('bt-menu-open'); 
           } 
         ); 
-      }); 
+      });
+     
+
+            function  miseAjourInput(event) {
+                var monPaveNumerique = document.getElementById('paveNumerique');
+                if (monPaveNumerique.value.length < 4) {
+                    monPaveNumerique.value += event.target.value;
+                    if (monPaveNumerique.value.length <= 3) {
+                        paveNumerique.setCustomValidity("Le code d'accès est composé de 4 chiffres");
+                    } else
+                        paveNumerique.setCustomValidity("");
+
+                }
+
+
+            }
+            ;
+
+            function cancel(event) {
+                var monPaveNumerique = document.getElementById('paveNumerique');
+                var monPaveNumeriqueValue = monPaveNumerique.value;
+                paveNumerique.value = monPaveNumeriqueValue.substring(0, monPaveNumeriqueValue.length - 1)
+
+                if (monPaveNumerique.value.length <= 3) {
+                    paveNumerique.setCustomValidity("Le code d'accès est composé de 4 chiffres");
+                } else
+                    paveNumerique.setCustomValidity("");
+
+            }
+            ;
+
+
+      
     </script>
+    
 </body>
 </html>

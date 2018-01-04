@@ -1,8 +1,3 @@
-<%-- 
-    Document   : header-pages-secondaires
-    Created on : 4 janv. 2018, 11:58:26
-    Author     : Sammy Guergachi <sguergachi at gmail.com>
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -32,6 +27,19 @@
         
     </head>
     <body  class="">
+        
+        <div>
+            <c:url value="FrontControleur?section=donnees-create" var="url01" />
+            <a href="${url01}">créer les données</a> |
+        
+            <c:url value="FrontControleur?section=connexion" var="url02" />
+            <a href="${url02}">Se connecter</a> |
+        
+            <c:url value="FrontControleur?section=catalogue&category=formule" var="url03" />
+            <a href="${url03}">Nos formules</a> 
+        </div>
+        
+        
         <!--==============================header=================================-->
         <header> 
             <div class="container_12">

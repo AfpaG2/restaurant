@@ -50,10 +50,13 @@
             <param-name>contact</param-name>
             <param-value>controleurs.management.ContactAffichageCtrl</param-value>
         </init-param>
+        
         <init-param>
-            <param-name>affichage-carte</param-name>
-            <param-value>controleurs.client.CarteAffichageCtrl</param-value>
+            <param-name>catalogue</param-name>
+            <param-value>controleurs.client.CarteMainCtrl</param-value>
         </init-param>
+        
+        
         <init-param>
             <param-name>donnees-create</param-name>
             <param-value>controleurs.DonneesCreateCtrl</param-value>

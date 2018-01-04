@@ -1,9 +1,3 @@
-<%-- 
-    Document   : index
-    Created on : Dec 28, 2017, 5:40:13 PM
-    Author     : Ibrahim Kelani <ibrahim.kelani@gmail.com>
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 

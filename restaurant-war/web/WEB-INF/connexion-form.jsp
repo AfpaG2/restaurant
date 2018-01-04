@@ -1,31 +1,11 @@
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="/restaurant-war/css/style.css" rel="stylesheet" type="text/css"/>
-        <style>
-            input.button{
-                background-color:blue;        
-                color:#555555;
-                font-weight:bold;
-                font-size:26px ;
-                height:50px;        
-                text-decoration:none;
-                width:70px;
-            }
-            .myForm input:valid{
-                background-color: lightGreen;
-            }
-            .myForm input:invalid{
-                background-color: lightPink;
-            }
-        </style>
-        <title>Connexion</title>
-    </head>
-    <body>
 
+
+<jsp:directive.include file="/WEB-INF/menus/header.jsp" />
+        <!--==============================Content=================================-->
+        
         <div>
             <h1>Connexion</h1>
             <c:url value="FrontControleur" var="url01" />
@@ -43,41 +23,6 @@
             <input class="button" type="button" onclick="miseAjourInput(event)" id="zero"  value="0">
         </div> 
 
+        <jsp:directive.include file="/WEB-INF/menus/newfooter.jsp" />
 
-        <script type="text/javascript">
-
-            function  miseAjourInput(event) {
-                var monPaveNumerique = document.getElementById('paveNumerique');
-                if (monPaveNumerique.value.length < 4) {
-                    monPaveNumerique.value += event.target.value;
-                    if (monPaveNumerique.value.length <= 3) {
-                        paveNumerique.setCustomValidity("Le code d'accès est composé de 4 chiffres");
-                    } else
-                        paveNumerique.setCustomValidity("");
-
-                }
-
-
-            }
-            ;
-
-            function cancel(event) {
-                var monPaveNumerique = document.getElementById('paveNumerique');
-                var monPaveNumeriqueValue = monPaveNumerique.value;
-                paveNumerique.value = monPaveNumeriqueValue.substring(0, monPaveNumeriqueValue.length - 1)
-
-                if (monPaveNumerique.value.length <= 3) {
-                    paveNumerique.setCustomValidity("Le code d'accès est composé de 4 chiffres");
-                } else
-                    paveNumerique.setCustomValidity("");
-
-            }
-            ;
-
-
-            
-
-        </script>       
-
-    </body>
-</html>
+    
