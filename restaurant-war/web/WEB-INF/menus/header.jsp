@@ -36,7 +36,10 @@
             <a href="${url02}">Se connecter</a> |
         
             <c:url value="FrontControleur?section=catalogue&category=formule" var="url03" />
-            <a href="${url03}">Nos formules</a> 
+            <a href="${url03}">Nos formules</a>|
+            <c:url value="FrontControleur?section=catalogue&category=natureProduit" var="url04" />
+            <a href="${url04}">Nos produits par nature</a>
+            
         </div>
         
         

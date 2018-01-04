@@ -24,7 +24,7 @@ public interface GestionCatalogueLocal {
 
     public Carte getAllCarte();
 
-    public Collection<NatureProduit> getAllProduitsByNature(String nomNatureProduit);
+    public Collection<Produit> getAllProduitsByNature(String nomNatureProduit);
 
     public Collection<Formule> getAllFormules();
 
@@ -33,7 +33,10 @@ public interface GestionCatalogueLocal {
     public List<Produit> findAllProduits(int firstResult, int maxResult, String typePlat);
 
     public Map<String, Collection<Produit>> getAllProduitsByFormule(Long formuleId);
+    
+    public Collection<NatureProduit> getAllNatureProduits();
 
     public Produit findProduitByName(String productName);
+
 
 }

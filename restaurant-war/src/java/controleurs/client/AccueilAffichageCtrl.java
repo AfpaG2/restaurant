@@ -31,8 +31,6 @@ public class AccueilAffichageCtrl implements SousControleur {
 
         String section = request.getParameter("section");
 
-        System.out.println("Hello");
-
         if ("accueil".equals(section)) {
 
             Produit patesLegumes = gestionCatalogue.findProduitByName("Noilles de riz sautées aux légumes");
@@ -44,8 +42,6 @@ public class AccueilAffichageCtrl implements SousControleur {
             request.setAttribute("patesLegumes", patesLegumes);
             request.setAttribute("patesPoulet", patesPoulet);
             request.setAttribute("rizCantonnais", rizCantonnais);
-            
-
         }
 
         return "/index.jsp";
