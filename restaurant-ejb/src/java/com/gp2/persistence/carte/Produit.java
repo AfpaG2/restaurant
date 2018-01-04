@@ -32,6 +32,7 @@ public class Produit implements Serializable {
     private String nomProduit;    
     private float prix;
     private String image;
+    private int stock;
     
     // propriétés pour les associations
     @ManyToOne(cascade = {CascadeType.PERSIST})
@@ -147,6 +148,13 @@ public class Produit implements Serializable {
 
     public void setPromotion(Promotion promotion) {
         this.promotion = promotion;
+    }
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
     }
 
     

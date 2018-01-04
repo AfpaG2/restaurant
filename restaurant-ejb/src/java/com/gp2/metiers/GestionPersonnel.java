@@ -5,6 +5,7 @@
  */
 package com.gp2.metiers;
 
+import com.gp2.outils.CustomedException;
 import com.gp2.persistence.company.Employe;
 import java.util.Collection;
 import javax.ejb.Stateless;
@@ -25,6 +26,13 @@ public class GestionPersonnel implements GestionPersonnelLocal {
        Query qr = em.createNamedQuery("com.gp2.persistence.canpany.Employe.findAllEmplye");
         return qr.getResultList();        
    }
+   
+   
+   public String seconnecter(String mdp)throws CustomedException {
+        Query qr = em.createNamedQuery("com.gp2.persistence.company.findFonctionByCode");
+        qr.setParameter("paramMdp", mdp);
+        return (String) qr.getSingleResult();
+    }
 
     
 }

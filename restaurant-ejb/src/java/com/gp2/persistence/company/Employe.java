@@ -9,7 +9,10 @@ import java.util.Date;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -28,19 +31,15 @@ import javax.validation.constraints.Size;
 @Entity
 @NamedQueries({
     @NamedQuery(name = "com.gp2.persistence.company.findAllEmployees", query = "SELECT e FROM Employe e"),
-    @NamedQuery(name = "com.gp2.persistence.company.entites.findByName", query = "SELECT e FROM Employe e WHERE e.nom = :paramNom"),
-    @NamedQuery(name = "com.gp2.persistence.company.entites.findPassword", query = "SELECT e FROM Employe e WHERE e.password = :paramPassword"),
-//    @NamedQuery(name = "com.gp2.entites.findPoste", query = "SELECT e FROM Employe e WHERE e.poste = :paramPoste"),
+    @NamedQuery(name = "com.gp2.persistence.company.findByName", query = "SELECT e FROM Employe e WHERE e.nom = :paramNom"),    
+    @NamedQuery(name = "com.gp2.persistence.company.findFonctionByCode", query = "SELECT distinct r.name FROM Employe e join e.roles r WHERE r.mdp = :paramMdp"),
     
 })
 public class Employe implements Serializable {
-
     private static final long serialVersionUID = 1L;
     @Id
-    @Column(nullable = false, length = 4)
-    @Size(min = 4, max = 4) // The size of the field is evaluated and must match the specified boudaries
-    @NotNull
-    private String password;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)    
+    private Long id;
 
     @NotNull
     @Size(min = 1, max = 50)
@@ -73,6 +72,9 @@ public class Employe implements Serializable {
     // Gestion des dépendances
     @OneToMany(mappedBy = "employe")
     private Collection<Commande> commandes;
+    
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private Collection<Role> roles;
 
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Restaurant restaurant;
@@ -82,23 +84,22 @@ public class Employe implements Serializable {
     
     public Employe() {
         commandes = new ArrayList<>();
+        roles= new ArrayList<>();
     }
 
-    public Employe(String nom, String prenom, String password, String telephone, String adresse) {
+    public Employe(String nom, String prenom, String telephone, String adresse) {
         this();
         this.nom = nom;
-        this.prenom = prenom;
-        this.password = password;
+        this.prenom = prenom;        
         this.telephone = telephone;
         this.adresse = adresse;
     }
 
-    public Employe(String nom, String prenom, Date dateNaissance, String password, String telephone, String adresse, Date dateEmbauche, Date dateFin) {
+    public Employe(String nom, String prenom, Date dateNaissance, String telephone, String adresse, Date dateEmbauche, Date dateFin) {
         this();
         this.nom = nom;
         this.prenom = prenom;
-        this.dateNaissance = dateNaissance;
-        this.password = password;
+        this.dateNaissance = dateNaissance;        
         this.telephone = telephone;
         this.adresse = adresse;
         this.dateEmbauche = dateEmbauche;
@@ -129,13 +130,15 @@ public class Employe implements Serializable {
         this.dateNaissance = dateNaissance;
     }
 
-    public String getPassword() {
-        return password;
+    public Long getId() {
+        return id;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setId(Long id) {
+        this.id = id;
     }
+
+    
 
     public String getTelephone() {
         return telephone;
@@ -191,6 +194,14 @@ public class Employe implements Serializable {
 
     public void setPoste(Poste poste) {
         this.poste = poste;
+    }
+
+    public Collection<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Collection<Role> roles) {
+        this.roles = roles;
     }
     
 

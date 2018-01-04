@@ -2,7 +2,6 @@ package controleurs.client;
 
 import com.gp2.metiers.GestionCatalogueLocal;
 import controleurs.SousControleur;
-import java.io.Serializable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.naming.Context;
@@ -23,6 +22,7 @@ public class CarteMainCtrl implements SousControleur {
         GestionCatalogueLocal gestionCatalogue = lookupGestionCatalogueLocal();
         String category = request.getParameter("category");
         String reference = request.getParameter("ref");
+        String nomNatureProduit = request.getParameter("nomNatureProduit");
         String page = "/WEB-INF/home.jsp";
 
         if ("formule".equals(category)) {
@@ -38,8 +38,8 @@ public class CarteMainCtrl implements SousControleur {
          if ("natureProduit".equals(category)) {
             if (reference != null) {
                 page = "/WEB-INF/natureProduit-detail.jsp";
-            } else {
-                request.setAttribute("natureProduits", gestionCatalogue.getAllProduitsByNature());
+            } else {                
+                request.setAttribute("natureProduits", gestionCatalogue.getAllProduitsByNature(nomNatureProduit));
                 page = "FrontControleur?section=natureProduit-affichage";
 
             }
