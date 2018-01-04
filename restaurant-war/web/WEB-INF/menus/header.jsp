@@ -81,7 +81,7 @@
                                 </li>
 
                                 <li class="bt-icon">
-                                    <c:url value="FrontControleur?section=carte" var="carte" />
+                                    <c:url value="FrontControleur?section=carte" var="carte" scope="session"/>
                                     <a href="${carte}">Carte</a>
                                 </li>
 

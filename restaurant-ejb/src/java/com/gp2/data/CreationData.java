@@ -763,12 +763,12 @@ public class CreationData implements CreationDataLocal {
         TypePlat tp05 = new TypePlat("PLATS");
         tp05.setCarte(carte);
         
-        Produit produ1 = new Produit("Pâtes blanches de riz sautées au poulet marine au gingembre et crevettes", 16.2f, "pates-blanches-de-riz-sautees-au-poulet-marine-au-gingembre-et-crevettes.jpg");
+        Produit produ1 = new Produit("Pâtes blanches de riz sautées au poulet mariné au gingembre et crevettes", 16.2f, "pates-blanches-de-riz-sautees-au-poulet-marine-au-gingembre-et-crevettes.jpg");
         produ1.setCodeTVA(tva10);
         pates.getProduits().add(produ1);
         volailles.getProduits().add(produ1);
         
-        Produit produ2 = new Produit("Pâtes blanches de riz sautées au poulet marine au gingembre", 13.9f,"pates-blanches-de-riz-sautees-au-poulet-marine-au-gingembre.jpg");
+        Produit produ2 = new Produit("Nouilles de riz sautées au poulet", 13.9f,"pates-de-riz-sautees-au-poulet.jpg");
         produ2.setCodeTVA(tva10);
         pates.getProduits().add(produ2);
         volailles.getProduits().add(produ2);
@@ -778,7 +778,7 @@ public class CreationData implements CreationDataLocal {
         pates.getProduits().add(produ3);
         fruitMer.getProduits().add(produ3);
         
-        Produit produ4 = new Produit("Pâtes blanches de riz sautées aux legumes", 12.3f,"pates-blanches-de-riz-sautees-aux-legumes.jpg");
+        Produit produ4 = new Produit("Noilles de riz sautées aux légumes", 12.3f,"pates-de-riz-sautees-aux-legumes.jpg");
         produ4.setCodeTVA(tva10);
         pates.getProduits().add(produ4);        
         legumes.getProduits().add(produ4);

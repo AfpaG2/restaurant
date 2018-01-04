@@ -1,5 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <jsp:directive.include file="WEB-INF/menus/header.jsp" /> 
 
@@ -7,22 +9,41 @@
 
 <div class="content">
     <div class="ic">More Website Templates @ TemplateMonster.com - December 02, 2017!</div>
-    <a href="index-2.html" class="block1">
-        <img src="images/blur_img1.jpg" alt="">
-        <span class="price"><span>magna non nunc</span><span><small>$</small> 29.35</span><strong></strong></span>
+
+    <a href="${carte}" class="block1">
+        <img src="images/${patesLegumes.image}" alt="Pates aux Legumes">
+        <span class="price">
+            <span>${patesLegumes.nomProduit}</span>
+            <span> 
+                <fmt:setLocale value="fr_FR" scope="session" />
+                <fmt:formatNumber value="${patesLegumes.prix}" type="currency" />
+            </span>
+            <strong></strong>
+        </span>
     </a>
-    <a href="index-2.html" class="block1">
-        <img src="images/blur_img2.jpg" alt="">
-        <span class="price"><span>terto nomino</span><span><small>$</small> 35.45</span><strong></strong></span>
+    <a href="${carte}" class="block1">
+        <img src="images/${patesPoulet.image}" alt="Pates au poulet">
+        <span class="price">
+            <span>${patesPoulet.nomProduit}</span>
+            <span>
+                <fmt:setLocale value="fr_FR" scope="session" />
+                <fmt:formatNumber value="${patesPoulet.prix}" type="currency" />
+            </span><strong></strong>
+        </span>
     </a>
-    <a href="index-2.html" class="block1">
-        <img src="images/blur_img3.jpg" alt="">
-        <span class="price"><span>metus feugiat</span>
-            <span><small>$</small> 50.10</span><strong></strong></span>
+    <a href="${carte}" class="block1">
+        <img src="images/${rizCantonnais.image}" alt="Riz cantonnais">
+        <span class="price">
+            <span>${rizCantonnais.nomProduit}</span>
+            <span>
+                <fmt:setLocale value="fr_FR" scope="session" />
+                <fmt:formatNumber value="${rizCantonnais.prix}" type="currency" />
+            </span><strong></strong>
+        </span>
     </a>
 
     <div class="container_12">
-        <div class="grid_12">
+        <div class="grid_12" style="padding-bottom: 3em; text-align: center">
             <h3>Nos Nouvelles Spécialités Maison</h3>
         </div>
         <div class="grid_3">
@@ -31,7 +52,7 @@
                 <div class="title">Lorem Ipsum</div>
                 Integer convallis orci vel mi nelaoreet, at ornare lorem consequat. Phasellus era nisl auctor vel veliterol. 
                 <br>
-                <a href="#">More Info</a>
+                <a href="#">Plus d'infos</a>
             </div>
         </div>
         <div class="grid_3">
@@ -40,7 +61,7 @@
                 <div class="title">Aliquamh ante</div>
                 Benteger convallis orci veli elaoreet, at ornare loremo konsequat. Phasellus era nisl auctor vel veliterut. 
                 <br>
-                <a href="#">More Info</a>
+                <a href="#">Plus d'infos</a>
             </div>
         </div>
         <div class="grid_3">
@@ -49,7 +70,7 @@
                 <div class="title">Ulum volutpat</div>
                 Hrtolieger convallis omi tem aore, at ornare loren coate. Pasellus era nisl auctor vel veliterolsed pharetra. 
                 <br>
-                <a href="#">More Info</a>
+                <a href="#">Plus d'infos</a>
             </div>
         </div>
         <div class="grid_3">
@@ -58,7 +79,7 @@
                 <div class="title">Vestibulum volu</div>
                 Convallis orci vel mi oreet, at kotornare lorem consequat. Sellus era nisl auctor vel veliterolvenenatis nulla. 
                 <br>
-                <a href="#">More Info</a>
+                <a href="#">Plus d'infos</a>
             </div>
         </div>
     </div>

@@ -25,6 +25,7 @@ public class GestionCatalogue implements GestionCatalogueLocal {
     public Carte getAllCarte() {
         return null;
     }
+
     @Override
     public Collection<NatureProduit> getAllProduitsByNature(String nomNatureProduit) {
         Query qr = em.createNamedQuery("com.gp2.persistence.carte.NatureProduit.findAllProduitsByNatureProduit");
@@ -45,7 +46,7 @@ public class GestionCatalogue implements GestionCatalogueLocal {
 
     @Override
     public List<Produit> findAllProduits(int firstResult, int maxResult, String typePlat) {
-        
+
         Query query = em.createNamedQuery("com.gp2.persistence.carte.findAllProduits", Produit.class);
         List<Produit> listeProduits = query
                 .setParameter("typePlatParam", typePlat)
@@ -55,26 +56,38 @@ public class GestionCatalogue implements GestionCatalogueLocal {
 
         return listeProduits;
     }
+    
+    @Override
+    public Produit findProduitByName(String productName) {
+
+        Query query = em.createNamedQuery("com.gp2.persistence.carte.findProduitByName", Produit.class);
+        
+        Produit produit = (Produit) query.setParameter("paramNomProduit", productName).getSingleResult();
+                
+        return produit;
+    }
 
     @Override
     public Map<String, Collection<Produit>> getAllProduitsByFormule(Long formuleId) {
         Map<String, Collection<Produit>> map = new HashMap();
         Query qr = em.createNamedQuery("com.gp2.persistence.carte.Formule.findAllTypePlatByFormule");
-        qr.setParameter("paramId", formuleId);        
-        Collection<String> typePlats =qr.getResultList();
-        
-        Collection<Produit> produits = qr.getResultList();        
-        Collection<Produit> typeProduits ;
-                for(String cle :typePlats){
-                    qr = em.createNamedQuery("com.gp2.persistence.carte.Formule.findAllProduitsByFormule");
-                    qr.setParameter("paramId", formuleId);
-                    qr.setParameter("paramTypePlat", cle);                   
-                    typeProduits = new ArrayList();
-                    typeProduits=qr.getResultList();   
-                    map.put(cle, typeProduits);
-                    }
-                return map;
-                }
+        qr.setParameter("paramId", formuleId);
+        Collection<String> typePlats = qr.getResultList();
+
+        Collection<Produit> produits = qr.getResultList();
+        Collection<Produit> typeProduits;
+        for (String cle : typePlats) {
+            qr = em.createNamedQuery("com.gp2.persistence.carte.Formule.findAllProduitsByFormule");
+            qr.setParameter("paramId", formuleId);
+            qr.setParameter("paramTypePlat", cle);
+            typeProduits = new ArrayList();
+            typeProduits = qr.getResultList();
+            map.put(cle, typeProduits);
+        }
+        return map;
     }
 
-
+    
+    
+    
+}

@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package controleurs.client;
 
 import com.gp2.metiers.GestionCatalogueLocal;
+import com.gp2.persistence.carte.Produit;
 import controleurs.SousControleur;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * 
+ *
  * @author Ibrahim Kelani <ibrahim.kelani@gmail.com>
  */
 public class AccueilAffichageCtrl implements SousControleur {
@@ -26,16 +26,28 @@ public class AccueilAffichageCtrl implements SousControleur {
 
     @Override
     public String executer(HttpServletRequest request, HttpServletResponse response) {
-        
+
         GestionCatalogueLocal gestionCatalogue = lookupGestionCatalogueLocal();
-        
-        String section = request.getParameter("accueil");
-        
+
+        String section = request.getParameter("section");
+
+        System.out.println("Hello");
+
         if ("accueil".equals(section)) {
+
+            Produit patesLegumes = gestionCatalogue.findProduitByName("Noilles de riz sautées aux légumes");
+
+            Produit patesPoulet = gestionCatalogue.findProduitByName("Nouilles de riz sautées au poulet");
             
-            return "/index.jsp";
+            Produit rizCantonnais = gestionCatalogue.findProduitByName("Riz Cantonnais");
+
+            request.setAttribute("patesLegumes", patesLegumes);
+            request.setAttribute("patesPoulet", patesPoulet);
+            request.setAttribute("rizCantonnais", rizCantonnais);
+            
+
         }
-        
+
         return "/index.jsp";
         // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -49,7 +61,5 @@ public class AccueilAffichageCtrl implements SousControleur {
             throw new RuntimeException(ne);
         }
     }
-    
-    
 
 }
