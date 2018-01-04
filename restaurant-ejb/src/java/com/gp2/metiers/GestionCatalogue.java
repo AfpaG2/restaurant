@@ -43,6 +43,7 @@ public class GestionCatalogue implements GestionCatalogueLocal {
 
     @Override
     public List<Produit> findAllProduits(int firstResult, int maxResult, String typePlat) {
+        
         Query query = em.createNamedQuery("com.gp2.persistence.carte.findAllProduits", Produit.class);
         List<Produit> listeProduits = query
                 .setParameter("typePlatParam", typePlat)
