@@ -25,12 +25,14 @@ public class GestionCatalogue implements GestionCatalogueLocal {
     public Carte getAllCarte() {
         return null;
     }
+    @Override
     public Collection<NatureProduit> getAllProduitsByNature(String nomNatureProduit) {
         Query qr = em.createNamedQuery("com.gp2.persistence.carte.NatureProduit.findAllProduitsByNatureProduit");
         qr.setParameter("paramNatureProduit", nomNatureProduit);
         return qr.getResultList();
     }
 
+    @Override
     public Collection<Formule> getAllFormules() {
         Query qr = em.createNamedQuery("com.gp2.persistence.carte.Formule.findAllFormule");
         return qr.getResultList();
@@ -54,6 +56,7 @@ public class GestionCatalogue implements GestionCatalogueLocal {
         return listeProduits;
     }
 
+    @Override
     public Map<String, Collection<Produit>> getAllProduitsByFormule(Long formuleId) {
         Map<String, Collection<Produit>> map = new HashMap();
         Query qr = em.createNamedQuery("com.gp2.persistence.carte.Formule.findAllTypePlatByFormule");
