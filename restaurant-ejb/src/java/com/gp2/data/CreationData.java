@@ -13,6 +13,7 @@ import com.gp2.persistence.company.Poste;
 import com.gp2.persistence.company.Restaurant;
 import com.gp2.persistence.carte.Carte;
 import com.gp2.persistence.carte.TypePlat;
+import com.gp2.persistence.company.Role;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import javax.ejb.Stateless;
@@ -134,24 +135,34 @@ public class CreationData implements CreationDataLocal {
        
         Ingredient ing01 = new Ingredient("Boeuf");
         ing01.setStatut(statut4001);
+        ing01.setStock(10);
         Ingredient ing02 = new Ingredient("Nouilles de riz");
         ing02.setStatut(statut4001);
+        ing02.setStock(10);
         Ingredient ing03 = new Ingredient("Basilic");
         ing03.setStatut(statut4001);
+        ing03.setStock(15);
         Ingredient ing04 = new Ingredient("Coriandre");
         ing04.setStatut(statut4001);
+        ing04.setStock(15);
         Ingredient ing05 = new Ingredient("Menthe");
         ing05.setStatut(statut4001);
+        ing05.setStock(15);
         Ingredient ing06 = new Ingredient("Ciboule ");
         ing06.setStatut(statut4001);
+        ing06.setStock(15);
         Ingredient ing07 = new Ingredient("Citron vert");
         ing07.setStatut(statut4001);
+        ing07.setStock(15);
         Ingredient ing08 = new Ingredient("Glaçons");
         ing08.setStatut(statut4001);
+        ing08.setStock(15);
         Ingredient ing09 = new Ingredient("Rhum blanc");
         ing09.setStatut(statut4001);
+        ing09.setStock(15);
         Ingredient ing10 = new Ingredient("Sirop de sucre de canne");
         ing10.setStatut(statut4001);
+        ing10.setStock(15);
         Ingredient ing11 = new Ingredient("Eau gazeuse");
         ing11.setStatut(statut4001);
         Ingredient ing12 = new Ingredient("Liqueur d'oranges"); 
@@ -1197,9 +1208,13 @@ public class CreationData implements CreationDataLocal {
         Poste posteManager = new Poste("Manager", "Gestion du restaurant");
         Poste posteCuisinier = new Poste("Cuisinier", "Preparation des commandes");
         
+        Role RoleServeur = new Role("serveur","0001");
+        Role RoleCaissier = new Role("caissier","0002");
+        Role RoleCuisinier = new Role("cuisinier","0003");
+        Role RoleManager = new Role("manager","0004");
+        
         Employe serveur = new Employe();
         serveur.setNom("Dada");
-        serveur.setPassword("0001");
         serveur.setPrenom("Yanick");
         Date dateEmbaucheServeur = new GregorianCalendar(2017, 9, 2).getTime();
         Date dateNaissanceServeur = new GregorianCalendar(1999, 1, 1).getTime();
@@ -1209,11 +1224,10 @@ public class CreationData implements CreationDataLocal {
         serveur.setPoste(posteServeur);
         serveur.setTelephone("06.23.45.67.89");
         serveur.setRestaurant(rest);
-        
+        serveur.getRoles().add(RoleServeur);
 
         Employe caissier = new Employe();
-        caissier.setNom("cais01");
-        caissier.setPassword("0002");
+        caissier.setNom("cais01");        
         caissier.setPrenom("pren02");
         Date dateEmbaucheCaissier = new GregorianCalendar(2017, 6, 2).getTime();
         Date dateNaissanceCaissier = new GregorianCalendar(1997, 1, 1).getTime();
@@ -1223,11 +1237,10 @@ public class CreationData implements CreationDataLocal {
         caissier.setPoste(posteCaissier);
         caissier.setTelephone("06.23.45.67.80");
         caissier.setRestaurant(rest);
-        
+        caissier.getRoles().add(RoleCaissier);
         
         Employe cuisinier = new Employe();
-        cuisinier.setNom("cuis01");
-        cuisinier.setPassword("0003");
+        cuisinier.setNom("cuis01");        
         cuisinier.setPrenom("pren03");
         Date dateEmbaucheCuisinier = new GregorianCalendar(2017, 9, 2).getTime();
         Date dateNaissanceCuisinier = new GregorianCalendar(1980, 1, 1).getTime();
@@ -1237,11 +1250,10 @@ public class CreationData implements CreationDataLocal {
         cuisinier.setPoste(posteCuisinier);
         cuisinier.setTelephone("07.23.45.67.87");
         cuisinier.setRestaurant(rest);
-        
+        cuisinier.getRoles().add(RoleCuisinier);
         
         Employe manager = new Employe();
-        manager.setNom("mana01");
-        manager.setPassword("0004");
+        manager.setNom("mana01");        
         manager.setPrenom("pren04");
         Date dateEmbaucheManager = new GregorianCalendar(2017, 9, 2).getTime();
         Date dateNaissanceManager = new GregorianCalendar(1970, 1, 1).getTime();
@@ -1251,6 +1263,7 @@ public class CreationData implements CreationDataLocal {
         manager.setPoste(posteManager);
         manager.setTelephone("06.23.45.67.85");
         manager.setRestaurant(rest);
+        manager.getRoles().add(RoleManager);
                
         
         em.persist(serveur);

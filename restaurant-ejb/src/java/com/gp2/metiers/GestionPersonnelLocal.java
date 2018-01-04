@@ -5,6 +5,7 @@
  */
 package com.gp2.metiers;
 
+import com.gp2.outils.CustomedException;
 import com.gp2.persistence.company.Employe;
 import java.util.Collection;
 import javax.ejb.Local;
@@ -16,5 +17,6 @@ import javax.ejb.Local;
 @Local
 public interface GestionPersonnelLocal {
     public Collection<Employe> getEmployes();
+     public String seconnecter(String mdp)throws CustomedException ;
     
 }

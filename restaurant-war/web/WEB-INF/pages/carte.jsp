@@ -49,7 +49,15 @@
 
     </head>
     <body  class="">
-
+        
+        <div>
+            <c:url value="FrontControleur?section=donnees-create" var="url01" />
+            <a href="${url01}">créer les données</a> |
+        </div>  
+        <div> 
+            <c:url value="FrontControleur?section=connexion" var="url01" />
+            <a href="${url01}">Se connecter</a> 
+        </div>
         <!--==============================header=================================-->
         <header> 
             <div class="container_12">

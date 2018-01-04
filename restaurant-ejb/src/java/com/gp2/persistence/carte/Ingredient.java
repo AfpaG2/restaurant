@@ -23,6 +23,7 @@ public class Ingredient implements Serializable {
     private Long id;
     private String nomIngredient;
     private float apportCalorique;
+    private int stock;
 
     //propriétés pour les associations
     @ManyToMany(mappedBy = "ingredients")
@@ -99,6 +100,13 @@ public class Ingredient implements Serializable {
 
     public void setInfosNutritionnelles(Collection<InfosNutritionnelle> infosNutritionnelles) {
         this.infosNutritionnelles = infosNutritionnelles;
+    }
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
     }
     
     
