@@ -7,8 +7,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="/restaurant-war/css/style.css" rel="stylesheet" type="text/css"/>
+        <link href="/restaurant-war/css/style-footer.css" rel="stylesheet" type="text/css"/>
         <title>Carte Restaurant</title>
+        
+        
     </head>
     <body>
         <div>
@@ -53,6 +55,7 @@
                         </tr>
                     </c:forEach>
 
+                    <%--
                     <tr>
                         <form method="get" action="FrontControleur?section=affichage-carte">
                             <table>
@@ -64,14 +67,12 @@
                                     </c:forEach>
                                 </tr>
                             </table>
-
                         </form>
-
                     </tr>
+                    --%>
                 </tbody>
             </table>
         </div>
 
-        <jsp:directive.include file="menus/footer.jsp" />
-    </body>
-</html>
+        <%--<jsp:directive.include file="menus/footer.jsp" /> --%>
+        <jsp:directive.include file="/menus/newfooter.jsp" />

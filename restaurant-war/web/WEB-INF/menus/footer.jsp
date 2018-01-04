@@ -3,7 +3,8 @@
     Created on : Dec 17, 2017, 9:25:20 PM
     Author     : Ibrahim Kelani <ibrahim.kelani@gmail.com>
 --%>
-
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <footer role="contentinfo" class="not-printable">
     <div class="header">
@@ -15,18 +16,13 @@
                         <li><a href="https://www.minh-thuong.fr/faq">FAQ</a></li>
                         <li><a href="https://www.minh-thuong.fr/contacts">CONTACT</a></li>
                         <li><a href="https://www.minh-thuong.fr/mentions-legales">MENTIONS LEGALES</a></li>
-                        <li><a href="https://www.minh-thuong.fr/cgu-mes-avantages">CGU FIDÉLITÉ</a></li>
+                        <li><a href="https://www.minh-thuong.fr/cgu-mes-avantages">CGU FIDÃ‰LITÃ‰</a></li>
                         <li><a href="https://www.minh-thuong.fr/cgv">CGV COMMANDE EN LIGNE</a></li>
                     </ul>
                 </nav>
             </section>
         </div>
     </div>
-
-
-
-
-
 
     <nav class="site">
         <div class="block">
@@ -43,7 +39,7 @@
                 
                 <li>
                     <c:url value="FrontControleur?section=affichage-carte&type=entree" var="urlEntree" />
-                    <a href="${urlEntree}">Nos entrées</a>
+                    <a href="${urlEntree}">Nos entrÃ©es</a>
                 </li>
                 
                 <li>
@@ -53,7 +49,7 @@
                 
                 <li>
                     <c:url value="FrontControleur?section=affichage-carte&type=dessert" var="urlDessert" />
-                    <a href="${urlDessert}">Nos désserts</a>
+                    <a href="${urlDessert}">Nos dÃ©sserts</a>
                 </li>
                 
                 <li>
@@ -64,7 +60,7 @@
             </ul>
         </div>
         <div class="block">
-            <h4>NOS ACTUALITÉS</h4>
+            <h4>NOS ACTUALITÃ‰S</h4>
             <ul class="menu">
                 <li>
                     <a href="/actualites">En ce moment</a>
@@ -97,7 +93,7 @@
                 </li>
 
                 <li>
-                    <a href="/entreprise/qualite-mcdonald-s">La qualité</a>
+                    <a href="/entreprise/qualite-mcdonald-s">La qualitÃ©</a>
                 </li>
 
                 <li>
@@ -114,23 +110,23 @@
             <ul class="ticker">
                 <li style="display: none;">
                     <p></p><p>
-                        Pour votre santé, évitez de manger trop gras, trop sucré, trop salé. <a href="http://www.mangerbouger.fr">www.mangerbouger.fr</a></p>
+                        Pour votre santÃ©, Ã©vitez de manger trop gras, trop sucrÃ©, trop salÃ©. <a href="http://www.mangerbouger.fr">www.mangerbouger.fr</a></p>
                     <p></p>
                 </li>
                 <li style="display: none;">
                     <p></p><p>
-                        Pour votre santé, mangez au moins cinq fruits et légumes par jour. <a href="http://www.mangerbouger.fr">www.mangerbouger.fr</a></p>
+                        Pour votre santÃ©, mangez au moins cinq fruits et lÃ©gumes par jour. <a href="http://www.mangerbouger.fr">www.mangerbouger.fr</a></p>
                     <p></p>
                 </li>
                 
                 <li style="display: list-item;" id="pratiquerSport">
                     <p></p><p>
-                        Pour votre santé, pratiquez une activité physique régulière. <a href="http://www.mangerbouger.fr">www.mangerbouger.fr</a></p>
+                        Pour votre santÃ©, pratiquez une activitÃ© physique rÃ©guliÃ¨re. <a href="http://www.mangerbouger.fr">www.mangerbouger.fr</a></p>
                     <p></p>
                 </li>
                 
                 <li style="display: none;">
-                    Pour votre santé, évitez de grignoter entre les repas. <a href="http://www.mangerbouger.fr">www.mangerbouger.fr</a>
+                    Pour votre santÃ©, Ã©vitez de grignoter entre les repas. <a href="http://www.mangerbouger.fr">www.mangerbouger.fr</a>
                 </li>
                 
                 <li id="minhDev">

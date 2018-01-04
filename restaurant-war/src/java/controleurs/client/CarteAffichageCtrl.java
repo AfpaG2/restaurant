@@ -34,7 +34,9 @@ public class CarteAffichageCtrl implements SousControleur {
         // Gestion de la pagination
         int maxEntriesPerPage = 5;
         int pageNumber = 1;
+
         String pageNumberValue = request.getParameter("pageNumber");
+
         if (pageNumberValue != null) {
             try {
                 pageNumber = Integer.parseInt(pageNumberValue);
@@ -83,7 +85,7 @@ public class CarteAffichageCtrl implements SousControleur {
 
         }
 
-        String page = "/WEB-INF/carte.jsp";
+        String page = "/WEB-INF/pages/carte.jsp";
         return page;
     }
 
