@@ -1142,6 +1142,7 @@ public class CreationData implements CreationDataLocal {
         formule01.setCodeTVA(tva10);
         formule01.setStatut(statut5001);
         formule01.setCarte(carte);
+        formule01.setImage("page4_img2.jpg");
         
         TypePlat formule01Entree = new TypePlat("ENTREES");        
         formule01Entree.getProduits().add(prdu3);
@@ -1165,6 +1166,7 @@ public class CreationData implements CreationDataLocal {
         formule02.setCodeTVA(tva10);
         formule02.setStatut(statut5001);
         formule02.setCarte(carte);
+        formule02.setImage("page4_img1.jpg");
         
         TypePlat formule02Entree = new TypePlat("ENTREES");        
         formule02Entree.getProduits().add(prdu1);
@@ -1181,6 +1183,7 @@ public class CreationData implements CreationDataLocal {
         formule03.setCodeTVA(tva10);
         formule03.setStatut(statut5001);
         formule03.setCarte(carte);
+        formule03.setImage("page3_img1.jpg");
         
         TypePlat formule03Plat = new TypePlat("PLATS");        
         formule03Plat.getProduits().add(produ3);

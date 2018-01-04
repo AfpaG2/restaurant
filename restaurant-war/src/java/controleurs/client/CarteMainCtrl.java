@@ -23,7 +23,7 @@ public class CarteMainCtrl implements SousControleur {
         String category = request.getParameter("category");
         String reference = request.getParameter("ref");
         String nomNatureProduit = request.getParameter("nomNatureProduit");
-        String page = "/WEB-INF/home.jsp";
+        String page = "/WEB-INF/pages/carte.jsp";
 
         if ("formule".equals(category)) {
             if (reference != null) {                
