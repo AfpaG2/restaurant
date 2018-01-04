@@ -26,11 +26,18 @@ public class GestionCatalogue implements GestionCatalogueLocal {
         return null;
     }
     @Override
-    public Collection<NatureProduit> getAllProduitsByNature(String nomNatureProduit) {
+    public Collection<Produit> getAllProduitsByNature(String nomNatureProduit) {
         Query qr = em.createNamedQuery("com.gp2.persistence.carte.NatureProduit.findAllProduitsByNatureProduit");
         qr.setParameter("paramNatureProduit", nomNatureProduit);
         return qr.getResultList();
     }
+    
+    @Override
+    public Collection<NatureProduit> getAllNatureProduits() {
+        Query qr = em.createNamedQuery("com.gp2.persistence.carte.NatureProduit.findAllNatureProduits");
+        return qr.getResultList();
+    }
+
 
     @Override
     public Collection<Formule> getAllFormules() {

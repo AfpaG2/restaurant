@@ -1,7 +1,11 @@
 package controleurs.client;
 
 import com.gp2.metiers.GestionCatalogueLocal;
+import com.gp2.persistence.carte.NatureProduit;
 import controleurs.SousControleur;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.naming.Context;
@@ -22,26 +26,26 @@ public class CarteMainCtrl implements SousControleur {
         GestionCatalogueLocal gestionCatalogue = lookupGestionCatalogueLocal();
         String category = request.getParameter("category");
         String reference = request.getParameter("ref");
-        String nomNatureProduit = request.getParameter("nomNatureProduit");
+
         String page = "/WEB-INF/pages/carte.jsp";
 
         if ("formule".equals(category)) {
-            if (reference != null) {                
+            if (reference != null) {
                 Long ref = Long.parseLong(reference);
-                request.setAttribute("map", gestionCatalogue.getAllProduitsByFormule(ref)); 
+                request.setAttribute("map", gestionCatalogue.getAllProduitsByFormule(ref));
                 page = "/WEB-INF/client/formule-detail.jsp";
             } else {
-                request.setAttribute("formules", gestionCatalogue.getAllFormules());                
+                request.setAttribute("formules", gestionCatalogue.getAllFormules());
                 page = "/WEB-INF/client/formules.jsp";
             }
-        } 
-         if ("natureProduit".equals(category)) {
+        }
+        if ("natureProduit".equals(category)) {
+            page = "/WEB-INF/client/natureProduit-detail.jsp";
+            Collection<NatureProduit> nameNatureProduits = gestionCatalogue.getAllNatureProduits();
+            request.setAttribute("natureProduits",nameNatureProduits);            
+            request.setAttribute("produitsByNature", gestionCatalogue.getAllProduitsByNature("NOS SOUPES"));
             if (reference != null) {
-                page = "/WEB-INF/natureProduit-detail.jsp";
-            } else {                
-                request.setAttribute("natureProduits", gestionCatalogue.getAllProduitsByNature(nomNatureProduit));
-                page = "FrontControleur?section=natureProduit-affichage";
-
+             request.setAttribute("produitsByNature", gestionCatalogue.getAllProduitsByNature(reference));
             }
         }
 
