@@ -50,40 +50,15 @@ public class CarteAffichageCtrl implements SousControleur {
         this.offset = maxEntriesPerPage * (pageNumber - 1);
         this.longueur = maxEntriesPerPage;
 
-        if (request.getParameter("type") != null) {
+//        request.setAttribute("typePlat", StringUtils.capitalize(request.getParameter("type")));
+//        request.setAttribute("typePlat", "salut");
 
-            List<Produit> listeProduits = null;
-
-            if ("cocktail".equals(request.getParameter("type"))) {
-                listeProduits = gestionCatalogue.findAllProduits(1, 10, "COCKTAILS");
-            }
-
-            if ("entree".equals(request.getParameter("type"))) {
-                listeProduits = gestionCatalogue.findAllProduits(1, 10, "ENTREES");
-            }
-
-            if ("plat".equals(request.getParameter("type"))) {
-                listeProduits = gestionCatalogue.findAllProduits(1, 11, "PLATS");
-            }
-
-            if ("dessert".equals(request.getParameter("type"))) {
-                listeProduits = gestionCatalogue.findAllProduits(1, 10, "DESSERTS");
-            }
-
-            if ("sauce".equals(request.getParameter("type"))) {
-                listeProduits = gestionCatalogue.findAllProduits(1, 10, "SAUCES");
-            }
-
-            if (listeProduits != null) {
-
-            }
-
-            request.setAttribute("pages", getPages(listeProduits));
-            request.setAttribute("produits", listeProduits);
-            request.setAttribute("typePlat", StringUtils.capitalize(request.getParameter("type")));
-//            request.setAttribute("typePlat", "salut");
-
-        }
+        request.setAttribute("cocktails", gestionCatalogue.findAllProduitsByTypePlat("COCKTAILS"));
+        request.setAttribute("entrees", gestionCatalogue.findAllProduitsByTypePlat("ENTREES"));
+        request.setAttribute("plats", gestionCatalogue.findAllProduitsByTypePlat("PLATS"));
+        request.setAttribute("desserts", gestionCatalogue.findAllProduitsByTypePlat("DESSERTS"));
+        request.setAttribute("sauces", gestionCatalogue.findAllProduitsByTypePlat("SAUCES"));
+        // request.setAttribute("formules", gestionCatalogue.findAllProduitsByTypePlat("FORMULES"));
 
         String page = "/WEB-INF/pages/carte.jsp";
         return page;

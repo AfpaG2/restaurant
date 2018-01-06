@@ -32,19 +32,18 @@ public class AccueilAffichageCtrl implements SousControleur {
         String section = request.getParameter("section");
 
         if ("accueil".equals(section)) {
-
-            Produit patesLegumes = gestionCatalogue.findProduitByName("Noilles de riz sautées aux légumes");
-
-            Produit patesPoulet = gestionCatalogue.findProduitByName("Nouilles de riz sautées au poulet");
             
-            Produit rizCantonnais = gestionCatalogue.findProduitByName("Riz Cantonnais");
-
-            request.setAttribute("patesLegumes", patesLegumes);
-            request.setAttribute("patesPoulet", patesPoulet);
-            request.setAttribute("rizCantonnais", rizCantonnais);
+            request.setAttribute("patesLegumes", gestionCatalogue.findProduitByName("Nouilles sautées aux légumes"));
+            request.setAttribute("patesPoulet", gestionCatalogue.findProduitByName("Nouilles sautées au poulet"));
+            request.setAttribute("rizCantonnais", gestionCatalogue.findProduitByName("Riz Cantonnais"));
+            
+            request.setAttribute("saladeLotus", gestionCatalogue.findProduitByName("Salade de lotus aux crevettes"));
+            request.setAttribute("saladeCalamar", gestionCatalogue.findProduitByName("Salade de calamars"));
+            request.setAttribute("rizGluantTaro", gestionCatalogue.findProduitByName("Riz gluant au taro et noix coco"));
+            request.setAttribute("phoLegumes", gestionCatalogue.findProduitByName("Phô légumes et boeuf"));
         }
 
-        return "/index.jsp";
+        return "/WEB-INF/accueil.jsp";
         // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

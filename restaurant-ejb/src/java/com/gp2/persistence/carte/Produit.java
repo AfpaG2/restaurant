@@ -21,7 +21,7 @@ import javax.persistence.OneToMany;
 
 @Entity
 @NamedQueries({
-    @NamedQuery(name = "com.gp2.persistence.carte.findAllProduits", query = "SELECT p FROM Produit AS p, IN (p.typePlats) AS tp WHERE tp.nomTypePlat = :typePlatParam ORDER BY p.id"),
+    @NamedQuery(name = "com.gp2.persistence.carte.findAllProduits", query = "SELECT DISTINCT p FROM Produit AS p, IN (p.typePlats) AS tp WHERE tp.nomTypePlat = :typePlatParam ORDER BY p.id"),
     @NamedQuery(name = "com.gp2.persistence.carte.findProduitByName", query = "SELECT p FROM Produit AS p WHERE p.nomProduit = :paramNomProduit")
 })
 public class Produit implements Serializable {

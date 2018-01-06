@@ -46,7 +46,8 @@ public class FrontControleur extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession();
         String section = request.getParameter("section");
-        String page = "/index.jsp";
+       // String page = "/WEB-INF/accueil.jsp";
+        String page = "/WEB-INF/home.jsp";
 
         if (section!= null && mp.containsKey(section)) {
             SousControleur sc = mp.get(section);

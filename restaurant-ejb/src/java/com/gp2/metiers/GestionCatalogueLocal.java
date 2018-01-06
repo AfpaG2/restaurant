@@ -30,7 +30,7 @@ public interface GestionCatalogueLocal {
 
     public Collection<TypePlat> getAllProduitsByTypePlat();
 
-    public List<Produit> findAllProduits(int firstResult, int maxResult, String typePlat);
+    public List<Produit> findAllProduitsByTypePlat(String typePlat);
 
     public Map<String, Collection<Produit>> getAllProduitsByFormule(Long formuleId);
     

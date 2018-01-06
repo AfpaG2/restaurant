@@ -80,7 +80,7 @@
 </div>
 
 <script src="js/TMForm.js"></script>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&amp;sensor=false"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9a8AtjTT4kqfj01n5thHFBn9vQdZMUh4&callback=initMap"></script>
 <script>
     $(document).ready(function () {
 

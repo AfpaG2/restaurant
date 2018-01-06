@@ -661,7 +661,7 @@ public class CreationData implements CreationDataLocal {
         
         
         
-        Produit  prdu3 = new Produit("Phô aux légumes",12.5f,"Pho-aux-legumes.jpg");
+        Produit  prdu3 = new Produit("Phô légumes et boeuf",12.5f,"pho-aux-legumes.jpg");
         soupes.getProduits().add(prdu3);
         prdu3.getIngredients().add(ing184);
         prdu3.getIngredients().add(ing005);
@@ -706,7 +706,7 @@ public class CreationData implements CreationDataLocal {
       prdu5.setCodeTVA(tva10);
       tp02.getProduits().add(prdu5);
      
-      Produit  prdu6 = new Produit("Salade de poulet mariné au gingembre",10.8f,"salade-de-poulet-marine-au-gingembre.jpg");
+      Produit  prdu6 = new Produit("Salade de poulet mariné",10.8f,"salade-de-poulet-marine-au-gingembre.jpg");
       salades.getProduits().add(prdu6);
       prdu6.getIngredients().add(ing019);
       prdu6.getIngredients().add(ing020);
@@ -723,7 +723,7 @@ public class CreationData implements CreationDataLocal {
       tp02.getProduits().add(prdu6);
       
       
-      Produit  prdu7 = new Produit("Salade de calamars sautées au piment et gingembre",11.9f,"salade-de-calamars-sautes-au-piment-et-gingembre.jpg");
+      Produit  prdu7 = new Produit("Salade de calamars",11.9f,"salade-calamars-sautes.jpg");
       salades.getProduits().add(prdu7);
       prdu7.getIngredients().add(ing020);
       prdu7.getIngredients().add(ing028);
@@ -739,7 +739,7 @@ public class CreationData implements CreationDataLocal {
       tp02.getProduits().add(prdu7);
       
       
-      Produit  prdu8 = new Produit("Salade de lotus aux crevettes sel et poivre",12.7f,"salade-de-lotus-aux-crevettes-sel-et-poivre.jpg");
+      Produit  prdu8 = new Produit("Salade de lotus aux crevettes",12.7f,"salade-lotus-crevettes.jpg");
       salades.getProduits().add(prdu8);
       prdu8.getIngredients().add(ing034);
       prdu8.getIngredients().add(ing036);
@@ -767,22 +767,22 @@ public class CreationData implements CreationDataLocal {
         TypePlat tp05 = new TypePlat("PLATS");
         tp05.setCarte(carte);
         
-        Produit produ1 = new Produit("Pâtes blanches de riz sautées au poulet mariné au gingembre et crevettes", 16.2f, "pates-blanches-de-riz-sautees-au-poulet-marine-au-gingembre-et-crevettes.jpg");
+        Produit produ1 = new Produit("Nouilles au poulet et crevettes", 16.2f, "nouilles-riz-sautees-poulet-marine-au-gingembre-crevettes.jpg");
         produ1.setCodeTVA(tva10);
         pates.getProduits().add(produ1);
         volailles.getProduits().add(produ1);
         
-        Produit produ2 = new Produit("Nouilles de riz sautées au poulet", 13.9f,"pates-de-riz-sautees-au-poulet.jpg");
+        Produit produ2 = new Produit("Nouilles sautées au poulet", 13.9f,"nouilles-de-riz-sautees-au-poulet.jpg");
         produ2.setCodeTVA(tva10);
         pates.getProduits().add(produ2);
         volailles.getProduits().add(produ2);
         
-        Produit produ3 = new Produit("Pâtes blanches de riz sautées aux crevettes", 14.9f,"pates-blanches-de-riz-sautees-aux-crevettes.jpg");
+        Produit produ3 = new Produit("Nouilles sautées aux crevettes", 14.9f,"pates-blanches-de-riz-sautees-aux-crevettes.jpg");
         produ3.setCodeTVA(tva10);
         pates.getProduits().add(produ3);
         fruitMer.getProduits().add(produ3);
         
-        Produit produ4 = new Produit("Noilles de riz sautées aux légumes", 12.3f,"pates-de-riz-sautees-aux-legumes.jpg");
+        Produit produ4 = new Produit("Nouilles sautées aux légumes", 12.3f,"nouilles-de-riz-sautees-aux-legumes.jpg");
         produ4.setCodeTVA(tva10);
         pates.getProduits().add(produ4);        
         legumes.getProduits().add(produ4);
@@ -795,11 +795,11 @@ public class CreationData implements CreationDataLocal {
         produ6.setCodeTVA(tva10);
         viandes.getProduits().add(produ6);
         
-        Produit produ7 = new Produit("Tit Kho, Porc au Caramel Vietnamien", 15.00f,"tit-kho-porc-au-caramel-vietnamien.jpg");
+        Produit produ7 = new Produit("Porc au Caramel", 15.00f,"tit-kho-porc-au-caramel-vietnamien.jpg");
         produ7.setCodeTVA(tva10);
         viandes.getProduits().add(produ7);
         
-        Produit produ8 = new Produit("Nems de Courgette Maison", 9.80f,"nems-de-courgette-maison.jpg");
+        Produit produ8 = new Produit("Nems de Courgette", 9.80f,"nems-de-courgette-maison.jpg");
         produ8.setCodeTVA(tva10);
         legumes.getProduits().add(produ8);
         
@@ -974,7 +974,7 @@ public class CreationData implements CreationDataLocal {
         TypePlat tp06 = new TypePlat("DESSERTS");
         tp06.setCarte(carte);
         
-        Produit produi1 = new Produit("Soupe de perles de tapioca au coco et à la banane", 5f,"soupe-de-perles-de-tapioca-au-coco-et-a-la-banane.jpg");
+        Produit produi1 = new Produit("Tapioca au coco et banane", 5f,"soupe-de-perles-de-tapioca-au-coco-et-a-la-banane.jpg");
         produi1.setCodeTVA(tva10);
         
         Produit produi2 = new Produit("Raviolis au nutella", 6.1f,"raviolis-au-nutella.jpg");
@@ -983,25 +983,25 @@ public class CreationData implements CreationDataLocal {
         Produit produi3 = new Produit("Flan au caramel et litchi", 5f,"flan-au-caramel-et-litchi.jpg");
         produi3.setCodeTVA(tva10);
         
-        Produit produi4 = new Produit("Fondant au chocolat et glace coco", 6.7f,"fondant-au-chocolat-et-glace-coco.jpg");
+        Produit produi4 = new Produit("Fondant au chocolat et coco", 6.7f,"fondant-au-chocolat-et-glace-coco.jpg");
         produi4.setCodeTVA(tva10);
         
-        Produit produi5 = new Produit("Coupe coco, vanille, chocolat et sauce chocolat", 7f,"coupe-coco-vanille-chocolat-et-sauce-chocolat.jpg");
+        Produit produi5 = new Produit("Coupe coco, vanille et chocolat", 7f,"coupe-coco-vanille-chocolat-et-sauce-chocolat.jpg");
         produi5.setCodeTVA(tva10);
         
-        Produit produi6 = new Produit("Salade de fruits frais exotiques", 6.1f,"salade-de-fruits-frais-exotiques.jpg");
+        Produit produi6 = new Produit("Salade de fruits exotiques", 6.1f,"salade-de-fruits-frais-exotiques.jpg");
         produi6.setCodeTVA(tva10);
         
-        Produit produi7 = new Produit("Crème d'avocat doucement sucrée", 7f,"creme-d-avocat-doucement-sucree.jpg");
+        Produit produi7 = new Produit("Crème d'avocat sucrée", 7f,"creme-d-avocat-doucement-sucree.jpg");
         produi7.setCodeTVA(tva10);
         
-        Produit produi8 = new Produit("Soupe sucrée de haricots noirs aux graines de lotus", 5.9f, "soupe-sucree-de-haricots-noirs-aux-graines-de-lotus.jpg");
+        Produit produi8 = new Produit("Soupe haricot au lotus", 5.9f, "soupe-sucree-de-haricots-noirs-aux-graines-de-lotus.jpg");
         produi8.setCodeTVA(tva10);
         
-        Produit produi9 = new Produit("Porridge sucré de riz gluant au taro et lait de coco (Chè Khoai môn)", 4.9f, "porridge-sucre-riz-gluant-au-taro.jpg");
+        Produit produi9 = new Produit("Riz gluant au taro et noix coco", 4.9f, "riz-gluant-violet-taro.jpg");
         produi9.setCodeTVA(tva10);
         
-        Produit produi10 = new Produit("Entremets aux Cornilles et riz gluant (Chè dâu trang)", 6.5f, "entremets-aux-cornilles-et-riz-gluant.jpg");
+        Produit produi10 = new Produit("Entremets au riz gluant", 6.5f, "entremets-aux-cornilles-et-riz-gluant.jpg");
         produi10.setCodeTVA(tva10);
         
         //==================================================================================|

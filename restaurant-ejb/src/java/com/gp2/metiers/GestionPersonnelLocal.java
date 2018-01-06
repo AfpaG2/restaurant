@@ -17,6 +17,6 @@ import javax.ejb.Local;
 @Local
 public interface GestionPersonnelLocal {
     public Collection<Employe> getEmployes();
-     public String seconnecter(String mdp)throws CustomedException ;
+    public String seconnecter(String mdp)throws CustomedException ;
     
 }
