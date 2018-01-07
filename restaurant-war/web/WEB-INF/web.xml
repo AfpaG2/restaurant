@@ -3,16 +3,19 @@
     <servlet>
         <servlet-name>FrontControleur</servlet-name>
         <servlet-class>controleurs.FrontControleur</servlet-class>
-        
         <init-param>
             <param-name>panier-affichage</param-name>
             <param-value>controleurs.commande.PanierAffichageCtrl</param-value>
         </init-param>
         <init-param>
+            <param-name>panier-operations</param-name>
+            <param-value>controleurs.commande.PanierOperationsCtrl</param-value>
+        </init-param>
+        
+        <init-param>
             <param-name>connexion</param-name>
             <param-value>controleurs.ConnexionCtrl</param-value>
         </init-param>
-        
         <init-param>
             <param-name>serveur</param-name>
             <param-value>controleurs.serveur.ServeurInterfaceCtrl</param-value>
@@ -25,7 +28,6 @@
             <param-name>cuisinier</param-name>
             <param-value>controleurs.serveur.CuisinierInterfaceCtrl</param-value>
         </init-param>
-        
         <init-param>
             <param-name>accueil</param-name>
             <param-value>controleurs.client.AccueilAffichageCtrl</param-value>
@@ -50,13 +52,10 @@
             <param-name>contact</param-name>
             <param-value>controleurs.management.ContactAffichageCtrl</param-value>
         </init-param>
-        
         <init-param>
             <param-name>catalogue</param-name>
             <param-value>controleurs.client.CarteMainCtrl</param-value>
         </init-param>
-        
-        
         <init-param>
             <param-name>donnees-create</param-name>
             <param-value>controleurs.DonneesCreateCtrl</param-value>
@@ -130,5 +129,17 @@
         <ejb-ref-type>Session</ejb-ref-type>
         <local>com.gp2.metiers.GestionCatalogueLocal</local>
         <ejb-link>restaurant-ejb.jar#GestionCatalogue</ejb-link>
+    </ejb-local-ref>
+    <ejb-local-ref>
+        <ejb-ref-name>GestionPanier</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>com.gp2.metiers.GestionPanierLocal</local>
+        <ejb-link>restaurant-ejb.jar#GestionPanier</ejb-link>
+    </ejb-local-ref>
+    <ejb-local-ref>
+        <ejb-ref-name>GestionPanier1</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>com.gp2.metiers.GestionPanierLocal</local>
+        <ejb-link>restaurant-ejb.jar#GestionPanier</ejb-link>
     </ejb-local-ref>
 </web-app>

@@ -63,7 +63,7 @@
                                 <fmt:formatNumber value="${cocktail.prixTTC}" type="currency" />
                             </div>
                             <div class="col2">
-                                <a href="FrontControleur?section=panier&ref=${cocktail.id}" class="button">Commander</a>
+                                <a href="FrontControleur?section=panier-operations&origine=catalogue&action=add&ref=${cocktail.id}" class="button">Commander</a>
                             </div>
                         </div>
 
@@ -88,7 +88,7 @@
                                 <fmt:formatNumber value="${entree.prixTTC}" type="currency" />
                             </div>
                             <h4>
-                                <a href="FrontControleur?section=panier&ref=${entree.id}" class="button">Commander</a>
+                                <a href="FrontControleur?section=panier-operations&origine=catalogue&action=add&ref=${entree.id}" class="button">Commander</a>
                             </h4>
                         </div>
 
@@ -111,7 +111,7 @@
                                 <fmt:formatNumber value="${plat.prixTTC}" type="currency" />
                             </div>
                             <h4>
-                                <a href="FrontControleur?section=panier&ref=${plat.id}" class="button">Commander</a>
+                                <a href="FrontControleur?section=panier-operations&origine=catalogue&action=add&ref=${plat.id}" class="button">Commander</a>
                             </h4>
                         </div>
 
@@ -157,17 +157,36 @@
                                 <fmt:formatNumber value="${dessert.prixTTC}" type="currency" /> 
                             </div>
                             <h4>
-                                <a href="FrontControleur?section=panier&ref=${dessert.id}" class="button">Commander</a>
+                                <a href="FrontControleur?section=panier-operations&origine=catalogue&action=add&ref=${dessert.id}" class="button">Commander</a>
                             </h4>
                         </div>
 
                     </c:forEach>
                 </div>
                 <div  id="tab-6" class="tab-content gallery6">
-                    <div class="grid_3">
-                        <a href="images/big1.jpg" class="gal"><img src="images/page3_img1.jpg" alt=""><span></span></a>
-                        <div class="col2"><span class="col3"><a href="#">Cras facilisis</a></span> $ 19.99</div>
-                    </div>
+                    <c:forEach items="${formules}" var="formule">
+                        <div class="grid_3">
+                            <a href="images/${formule.image}" class="gal">
+                                <img src="images/${formule.image}" alt="">
+                                <span></span>
+                            </a>
+
+                            <div class="col2">
+                                <span class="col3">
+                                    <a href="#">${formule.nomFormul}
+                                    <br>    
+                                    ${formule.descrpition}</a>
+                                </span> 
+                                <br>Prix : 
+                                <fmt:setLocale value="fr_FR" scope="session" />
+                                <fmt:formatNumber value="${formule.prixTTC}" type="currency" /> 
+                            </div>
+                            <h4>
+                                <a href="FrontControleur?section=catalogue&category=formule&ref=${formule.id}" class="button">détail</a>
+                            </h4>
+                        </div>
+
+                    </c:forEach>
 
                 </div>
 

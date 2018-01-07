@@ -58,7 +58,7 @@ public class CarteAffichageCtrl implements SousControleur {
         request.setAttribute("plats", gestionCatalogue.findAllProduitsByTypePlat("PLATS"));
         request.setAttribute("desserts", gestionCatalogue.findAllProduitsByTypePlat("DESSERTS"));
         request.setAttribute("sauces", gestionCatalogue.findAllProduitsByTypePlat("SAUCES"));
-        // request.setAttribute("formules", gestionCatalogue.findAllProduitsByTypePlat("FORMULES"));
+        request.setAttribute("formules", gestionCatalogue.getAllFormules());
 
         String page = "/WEB-INF/pages/carte.jsp";
         return page;
