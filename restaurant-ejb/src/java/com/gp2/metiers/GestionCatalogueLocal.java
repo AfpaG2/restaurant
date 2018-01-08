@@ -37,6 +37,5 @@ public interface GestionCatalogueLocal {
     public Collection<NatureProduit> getAllNatureProduits();
 
     public Produit findProduitByName(String productName);
-
-
+    
 }

@@ -23,5 +23,4 @@ public interface GestionCommandeLocal {
     public Commande changeStatutCommande(Commande commande);
     public Boolean modifierCommande(Commande commande);
     public Commande validerCommande(Collection<LignePanier> lp);
-
 }
