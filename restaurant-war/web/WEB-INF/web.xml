@@ -11,7 +11,10 @@
             <param-name>panier-operations</param-name>
             <param-value>controleurs.commande.PanierOperationsCtrl</param-value>
         </init-param>
-        
+        <init-param>
+            <param-name>valider-commande</param-name>
+            <param-value>controleurs.commande.ValiderCommandeCtrl</param-value>
+        </init-param>
         <init-param>
             <param-name>connexion</param-name>
             <param-value>controleurs.ConnexionCtrl</param-value>
@@ -141,5 +144,11 @@
         <ejb-ref-type>Session</ejb-ref-type>
         <local>com.gp2.metiers.GestionPanierLocal</local>
         <ejb-link>restaurant-ejb.jar#GestionPanier</ejb-link>
+    </ejb-local-ref>
+    <ejb-local-ref>
+        <ejb-ref-name>GestionCommande</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>com.gp2.metiers.GestionCommandeLocal</local>
+        <ejb-link>restaurant-ejb.jar#GestionCommande</ejb-link>
     </ejb-local-ref>
 </web-app>

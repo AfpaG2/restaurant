@@ -6,6 +6,7 @@
 package com.gp2.metiers;
 
 
+import com.gp2.persistence.carte.LignePanier;
 import com.gp2.persistence.commande.Commande;
 import java.util.Collection;
 import javax.ejb.Local;
@@ -20,6 +21,8 @@ public interface GestionCommandeLocal {
     public Commande getCommande(String id);
     public Collection<Commande> getAllCommandes();
     public Commande changeStatutCommande(Commande commande);
-    public Commande modifierCommande(Commande commande);
+    public Boolean modifierCommande(Commande commande);
+    public Commande validerCommande(Collection<LignePanier> lp);
+    
     
 }
