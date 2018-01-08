@@ -50,7 +50,7 @@
                             </td>
                             <td>
                                 <c:url value="FrontControleur?section=operations-panier&origine=carte&action=add&ref=${p.id}" var="urlp" />
-                                <a href="${urlp}">Commander</a>
+                                <a href="${urlp}">Ajouter au Panier</a>
                             </td>
                         </tr>
                     </c:forEach>

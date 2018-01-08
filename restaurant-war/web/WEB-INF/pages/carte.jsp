@@ -63,7 +63,7 @@
                                 <fmt:formatNumber value="${cocktail.prixTTC}" type="currency" />
                             </div>
                             <div class="col2">
-                                <a href="FrontControleur?section=panier-operations&origine=catalogue&action=add&ref=${cocktail.id}" class="button">Commander</a>
+                                <a href="FrontControleur?section=panier-operations&origine=catalogue&action=add&ref=${cocktail.id}" class="button">Ajouter au Panier</a>
                             </div>
                         </div>
 
@@ -88,7 +88,7 @@
                                 <fmt:formatNumber value="${entree.prixTTC}" type="currency" />
                             </div>
                             <h4>
-                                <a href="FrontControleur?section=panier-operations&origine=catalogue&action=add&ref=${entree.id}" class="button">Commander</a>
+                                <a href="FrontControleur?section=panier-operations&origine=catalogue&action=add&ref=${entree.id}" class="button">Ajouter au Panier</a>
                             </h4>
                         </div>
 
@@ -111,7 +111,7 @@
                                 <fmt:formatNumber value="${plat.prixTTC}" type="currency" />
                             </div>
                             <h4>
-                                <a href="FrontControleur?section=panier-operations&origine=catalogue&action=add&ref=${plat.id}" class="button">Commander</a>
+                                <a href="FrontControleur?section=panier-operations&origine=catalogue&action=add&ref=${plat.id}" class="button">Ajouter au Panier</a>
                             </h4>
                         </div>
 
@@ -157,7 +157,7 @@
                                 <fmt:formatNumber value="${dessert.prixTTC}" type="currency" /> 
                             </div>
                             <h4>
-                                <a href="FrontControleur?section=panier-operations&origine=catalogue&action=add&ref=${dessert.id}" class="button">Commander</a>
+                                <a href="FrontControleur?section=panier-operations&origine=catalogue&action=add&ref=${dessert.id}" class="button">Ajouter au Panier</a>
                             </h4>
                         </div>
 
@@ -182,7 +182,7 @@
                                 <fmt:formatNumber value="${formule.prixTTC}" type="currency" /> 
                             </div>
                             <h4>
-                                <a href="FrontControleur?section=catalogue&category=formule&ref=${formule.id}" class="button">détail</a>
+                                <a href="FrontControleur?section=catalogue&category=formule&ref=${formule.id}" class="button">Ajouter au Panier</a>
                             </h4>
                         </div>
 

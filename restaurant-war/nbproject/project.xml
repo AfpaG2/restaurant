@@ -33,5 +33,13 @@
                 <id>dist</id>
             </reference>
         </references>
+        <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
+            <word>appuyant</word>
+            <word>minhThuongSalle</word>
+            <word>numéros</word>
+            <word>Partie</word>
+            <word>TemplateMonster</word>
+            <word>Website</word>
+        </spellchecker-wordlist>
     </configuration>
 </project>

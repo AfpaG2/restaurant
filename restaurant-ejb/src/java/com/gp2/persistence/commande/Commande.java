@@ -18,6 +18,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
@@ -28,6 +30,10 @@ import javax.persistence.TemporalType;
  * @author cdi307
  */
 @Entity
+@NamedQueries({
+    @NamedQuery(name = "com.gp2.persistence.carte.findCommandeById", query = "SELECT DISTINCT c FROM Commande as C where c.id = :idCommande"),
+//    @NamedQuery(name = "com.gp2.persistence.carte.findProduitByName", query = "SELECT p FROM Produit AS p WHERE p.nomProduit = :paramNomProduit")
+})
 public class Commande implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
