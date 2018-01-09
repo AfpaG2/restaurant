@@ -5,6 +5,10 @@
  */
 package com.gp2.metiers;
 
+import com.gp2.outils.CustomedException;
+import com.gp2.persistence.Statut;
+import com.gp2.persistence.commande.Commande;
+import java.util.Collection;
 import javax.ejb.Local;
 
 /**
@@ -13,5 +17,15 @@ import javax.ejb.Local;
  */
 @Local
 public interface GestionCuisineLocal {
-    
+
+    public Collection<Commande> findCommandeByStatut(String idStatut) throws CustomedException;
+
+    public void changerStatutLigneCommande(String idStatut, String idLigneCommande) throws CustomedException;
+
+    public void changerStatutCommande(String idStatut, String idCommande) throws CustomedException;
+
+    public Collection<Statut> findAllStatutCommande();
+
+    public Collection<Statut> findAllStatutLigneCommande();
+
 }

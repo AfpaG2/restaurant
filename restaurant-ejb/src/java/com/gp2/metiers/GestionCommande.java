@@ -73,10 +73,7 @@ public class GestionCommande implements GestionCommandeLocal {
         return true;
     }
 
-    public void persist(Object object) {
-        em.persist(object);
-    }
-
+    
     @Override
     public Commande changeStatutCommande(Commande commande) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
