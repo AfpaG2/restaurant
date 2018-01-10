@@ -10,7 +10,7 @@
             <h1>Commandes</h1>
 
             <c:forEach items="${commandes}" var="c">
-                N°Table : ${c.emplacement.NumeroTable}
+                N°Table : ${c.emplacement.numeroTable}
                 <table>
                     <thead>
                         <tr>
