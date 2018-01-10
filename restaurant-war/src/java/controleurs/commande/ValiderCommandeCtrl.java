@@ -27,7 +27,7 @@ import javax.servlet.http.HttpSession;
  */
 public class ValiderCommandeCtrl implements SousControleur{
 
-    
+    private static final long serialVersionUID = 1L;
 
     @Override
     public String executer(HttpServletRequest request, HttpServletResponse response) {

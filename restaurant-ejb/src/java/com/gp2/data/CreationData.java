@@ -13,6 +13,8 @@ import com.gp2.persistence.company.Poste;
 import com.gp2.persistence.company.Restaurant;
 import com.gp2.persistence.carte.Carte;
 import com.gp2.persistence.carte.TypePlat;
+import com.gp2.persistence.commande.Commande;
+import com.gp2.persistence.commande.LigneCommande;
 import com.gp2.persistence.company.Role;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -55,7 +57,9 @@ public class CreationData implements CreationDataLocal {
         Statut statut2001 = new Statut(2001, "ligneCommande", "disponible");
         Statut statut2002 = new Statut(2002, "ligneCommande", "annulé");
         Statut statut2003 = new Statut(2003, "ligneCommande", "indisponible");
-        Statut statut2004 = new Statut(2004, "ligneCommande", "prêt");
+        Statut statut2004 = new Statut(2004, "ligneCommande", "En attente de préparation");
+        Statut statut2005 = new Statut(2005, "ligneCommande", "En préparation");
+        Statut statut2006 = new Statut(2006, "ligneCommande", "prêt");
         
         // produit 30
         Statut statut3001 = new Statut(3001, "produit", "disponible");
@@ -76,38 +80,39 @@ public class CreationData implements CreationDataLocal {
         Statut statut6004 = new Statut(6004, "emplacement", "indisponible");
        
 
-        Emplacement Empl01 = new Emplacement("10",2);
-        Empl01.setStatut(statut6001);
-        Emplacement Empl02 = new Emplacement("11",2);
-        Empl02.setStatut(statut6001);
-        Emplacement Empl03 = new Emplacement("12",2);
+        Emplacement Empl01 = new Emplacement("seat1A",2);
+        Empl01.setStatut(statut6002);
+        Emplacement Empl02 = new Emplacement("seat1B",2);
+        Empl02.setStatut(statut6003);
+        Emplacement Empl03 = new Emplacement("seat1C",2);
         Empl03.setStatut(statut6001);
-        Emplacement Empl04 = new Emplacement("13",2);
+        Emplacement Empl04 = new Emplacement("seat1D",2);
         Empl04.setStatut(statut6001);
-        Emplacement Empl05 = new Emplacement("14",2);
+        Emplacement Empl05 = new Emplacement("seat2A",2);
         Empl05.setStatut(statut6001);
-        Emplacement Empl06 = new Emplacement("15",2);
-        Empl06.setStatut(statut6001);
-        Emplacement Empl07 = new Emplacement("16",6);
+        Emplacement Empl06 = new Emplacement("seat2B",2);
+        Empl06.setStatut(statut6004);
+        Emplacement Empl07 = new Emplacement("seat2C",2);
         Empl07.setStatut(statut6001);
-        Emplacement Empl08 = new Emplacement("17",6);
+        Emplacement Empl08 = new Emplacement("seat2D",2);
         Empl08.setStatut(statut6001);
-        Emplacement Empl09 = new Emplacement("18",6);
+        Emplacement Empl09 = new Emplacement("seat3A",2);
         Empl09.setStatut(statut6001);
-        Emplacement Empl10 = new Emplacement("19",6);
+        Emplacement Empl10 = new Emplacement("seat3B",2);
         Empl10.setStatut(statut6001);
-        Emplacement Empl11 = new Emplacement("20",6);
-        Empl11.setStatut(statut6001);
-        Emplacement Empl12 = new Emplacement("21",4);
+        Emplacement Empl11 = new Emplacement("seat3C",2);
+        Empl11.setStatut(statut6002);
+        Emplacement Empl12 = new Emplacement("seat3D",2);
         Empl12.setStatut(statut6001);
-        Emplacement Empl13 = new Emplacement("22",4);
+        Emplacement Empl13 = new Emplacement("seat4A",2);
         Empl13.setStatut(statut6001);
-        Emplacement Empl14 = new Emplacement("23",4);
-        Empl14.setStatut(statut6001);
-        Emplacement Empl15 = new Emplacement("24",4);
+        Emplacement Empl14 = new Emplacement("seat4B",2);
+        Empl14.setStatut(statut6003);
+        Emplacement Empl15 = new Emplacement("seat4C",2);
         Empl15.setStatut(statut6001);
-        Emplacement Empl16 = new Emplacement("25",4);
+        Emplacement Empl16 = new Emplacement("seat4D",2);
         Empl16.setStatut(statut6001);
+        
         Emplacement Empl17 = new Emplacement("26",4);
         Empl17.setStatut(statut6001);
         Emplacement Empl18 = new Emplacement("27",4);
@@ -1452,6 +1457,50 @@ public class CreationData implements CreationDataLocal {
         manager.getRoles().add(RoleManager);
                
         
+        Commande com1 = new Commande();
+        com1.setEmplacement(Empl28);
+        com1.setStatut(statut1002);
+        Date dateCommande1 = new GregorianCalendar(2018, 1, 10).getTime();
+        com1.setDateCommande(dateCommande1);
+        
+        LigneCommande lc1 = new LigneCommande();
+        lc1.setProduit(produ9);
+        lc1.setStatut(statut2004);        
+        lc1.setCommande(com1);
+        
+        LigneCommande lc11 = new LigneCommande();
+        lc11.setProduit(prdu5);
+        lc11.setStatut(statut2004);        
+        lc11.setCommande(com1);
+        
+        LigneCommande lc12 = new LigneCommande();
+        lc12.setProduit(produi1);
+        lc12.setStatut(statut2004);        
+        lc12.setCommande(com1);
+        
+        Commande com2 = new Commande();
+        com1.setEmplacement(Empl01);
+        com1.setStatut(statut1002);
+        Date dateCommande2 = new GregorianCalendar(2018, 1, 9).getTime();
+        com2.setDateCommande(dateCommande2);
+        
+        LigneCommande lc13 = new LigneCommande();
+        lc13.setProduit(produ6);
+        lc13.setStatut(statut2004);        
+        lc13.setCommande(com2);
+        
+        LigneCommande lc14 = new LigneCommande();
+        lc14.setProduit(produ8);
+        lc14.setStatut(statut2004);        
+        lc14.setCommande(com2);
+        
+        
+        em.persist(lc1);
+        em.persist(lc11);
+        em.persist(lc12);
+        em.persist(lc13);
+        em.persist(lc14);
+        
         em.persist(serveur);
         em.persist(caissier);
         em.persist(cuisinier);
@@ -1478,6 +1527,8 @@ public class CreationData implements CreationDataLocal {
         em.persist(statut2002);
         em.persist(statut2003);
         em.persist(statut2004);
+        em.persist(statut2005);
+        em.persist(statut2006);
         em.persist(statut3001);
         em.persist(statut3002);
         em.persist(statut4001);
@@ -1546,6 +1597,5 @@ public class CreationData implements CreationDataLocal {
         em.flush();
     
     }
-
 
 }

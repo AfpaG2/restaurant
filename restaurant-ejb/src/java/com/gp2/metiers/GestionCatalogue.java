@@ -27,6 +27,7 @@ public class GestionCatalogue implements GestionCatalogueLocal {
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public Collection<Produit> getAllProduitsByNature(String nomNatureProduit) {
         Query qr = em.createNamedQuery("com.gp2.persistence.carte.NatureProduit.findAllProduitsByNatureProduit");
         qr.setParameter("paramNatureProduit", nomNatureProduit);
@@ -34,13 +35,14 @@ public class GestionCatalogue implements GestionCatalogueLocal {
     }
     
     @Override
+    @SuppressWarnings("unchecked")
     public Collection<NatureProduit> getAllNatureProduits() {
         Query qr = em.createNamedQuery("com.gp2.persistence.carte.NatureProduit.findAllNatureProduits");
         return qr.getResultList();
     }
 
-
     @Override
+    @SuppressWarnings("unchecked")
     public Collection<Formule> getAllFormules() {
         Query qr = em.createNamedQuery("com.gp2.persistence.carte.Formule.findAllFormule");
         return qr.getResultList();
@@ -55,6 +57,7 @@ public class GestionCatalogue implements GestionCatalogueLocal {
     public List<Produit> findAllProduitsByTypePlat(String typePlat) {
 
         Query query = em.createNamedQuery("com.gp2.persistence.carte.findAllProduits", Produit.class);
+        @SuppressWarnings("unchecked")
         List<Produit> listeProduits = query.setParameter("typePlatParam", typePlat).getResultList();
 
         return listeProduits;
@@ -71,12 +74,16 @@ public class GestionCatalogue implements GestionCatalogueLocal {
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public Map<String, Collection<Produit>> getAllProduitsByFormule(Long formuleId) {
+        @SuppressWarnings("unchecked")
         Map<String, Collection<Produit>> map = new HashMap();
         Query qr = em.createNamedQuery("com.gp2.persistence.carte.Formule.findAllTypePlatByFormule");
         qr.setParameter("paramId", formuleId);
+        @SuppressWarnings("unchecked")
         Collection<String> typePlats = qr.getResultList();
 
+        @SuppressWarnings("unchecked")
         Collection<Produit> produits = qr.getResultList();
         Collection<Produit> typeProduits;
         for (String cle : typePlats) {
@@ -89,8 +96,4 @@ public class GestionCatalogue implements GestionCatalogueLocal {
         }
         return map;
     }
-
-    
-    
-    
 }

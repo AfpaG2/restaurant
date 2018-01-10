@@ -18,10 +18,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
 
 @Entity
+@NamedQueries({    
+    @NamedQuery(name = "com.gp2.persistence.carte.LigneCommande.findLigneCommandeByCommande", query = "SELECT l FROM LigneCommande AS l join l.commande c WHERE c.id = :paramIdCommande")
+})
 public class LigneCommande implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id

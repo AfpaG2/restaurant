@@ -11,6 +11,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
 /**
@@ -18,11 +20,16 @@ import javax.persistence.OneToMany;
  * @author Ibrahim Kelani <ibrahim.kelani@gmail.com>
  */
 @Entity
+@NamedQueries({
+    @NamedQuery(name = "com2.gp2.persistence.commande.findAllEmplacements", query = "SELECT DISTINCT empl FROM Emplacement empl WHERE empl.numeroTable LIKE 'seat%'"),
+    @NamedQuery(name = "com2.gp2.persistence.commande.findEmplacementByNum", query = "SELECT DISTINCT empl FROM Emplacement empl WHERE empl.numeroTable = :paramNumTable"),
+    @NamedQuery(name = "com2.gp2.persistence.commande.findAllEmplacementsByStatut", query = "SELECT DISTINCT empl FROM Emplacement empl WHERE empl.statut.id = :paramIdStatut AND empl.numeroTable LIKE 'seat%'")
+})
 public class Emplacement implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    private String NumeroTable;    
+    private String numeroTable;    
     private int capacite;
     
     // gestion des dependances
@@ -36,18 +43,18 @@ public class Emplacement implements Serializable {
         commandes = new ArrayList<>();
     }
 
-    public Emplacement(String NumeroTable, int capacite) {
+    public Emplacement(String numeroTable, int capacite) {
         this();
-        this.NumeroTable = NumeroTable;
+        this.numeroTable = numeroTable;
         this.capacite = capacite;
     }
 
     public String getNumeroTable() {
-        return NumeroTable;
+        return numeroTable;
     }
 
-    public void setNumeroTable(String NumeroTable) {
-        this.NumeroTable = NumeroTable;
+    public void setNumeroTable(String numeroTable) {
+        this.numeroTable = numeroTable;
     }
 
     public int getCapacite() {
@@ -74,13 +81,10 @@ public class Emplacement implements Serializable {
     public void setStatut(Statut statut) {
         this.statut = statut;
     }
-    
-    
-
 
     @Override
     public String toString() {
-        return this.NumeroTable + "(" + this.capacite + " places)";
+        return this.numeroTable + "(" + this.capacite + " places)";
     }
 
 }

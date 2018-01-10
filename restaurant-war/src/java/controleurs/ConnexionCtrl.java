@@ -40,7 +40,11 @@ public class ConnexionCtrl implements SousControleur {
                 request.setAttribute("dClasse", "info");
                 request.setAttribute("msg", "Binvenue : " + fonction);
                 session.setAttribute("fonction", fonction);
-                page = "/WEB-INF/" + fonction.toLowerCase() + "/" + fonction.toLowerCase() + ".jsp";
+                page = "FrontControleur?section="+fonction+"-interface-affichage";
+                request.setAttribute("redirect", true);
+                
+                
+//                page = "/WEB-INF/" + fonction.toLowerCase() + "/" + fonction.toLowerCase() + ".jsp";
 
             } catch (CustomedException ex) {
                 if (ex.getNumero() == CustomedException.USER_ERR) {

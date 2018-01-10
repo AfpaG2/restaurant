@@ -1,19 +1,46 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.gp2.metiers;
 
+import com.gp2.persistence.commande.Emplacement;
+import java.util.List;
 import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
-/**
- *
- * @author youssef
- */
 @Stateless
 public class GestionEmplacement implements GestionEmplacementLocal {
+    @PersistenceContext(unitName = "restaurant-ejbPU")
+    private EntityManager em;
 
-    // Add business logic below. (Right-click in editor and choose
-    // "Insert Code > Add Business Method")
+    
+    @Override    
+    public List<Emplacement> findAllTables() {
+        
+        Query query = em.createNamedQuery("com2.gp2.persistence.commande.findAllEmplacements");
+        
+        return query.getResultList();
+    }
+
+    @Override
+    public Emplacement findTableByNum(String numeroTable) {
+        Query query = em.createNamedQuery("com2.gp2.persistence.commande.findEmplacementByNum")
+                .setParameter("paramNumTable", numeroTable);
+        
+        return (Emplacement) query.getSingleResult();
+    }
+
+    @Override
+    @SuppressWarnings("unchecked")
+    public List<Emplacement> findAllTablesByStatut(int idStatut) {
+        
+        Query query = em.createNamedQuery("com2.gp2.persistence.commande.findAllEmplacementsByStatut")
+                .setParameter("paramIdStatut", idStatut);
+        
+        return query.getResultList();
+    }
+
+    public void persist(Object object) {
+        em.persist(object);
+    }
 }
