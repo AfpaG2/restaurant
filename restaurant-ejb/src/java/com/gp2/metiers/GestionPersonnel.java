@@ -23,7 +23,7 @@ public class GestionPersonnel implements GestionPersonnelLocal {
     private EntityManager em;
 
    public Collection<Employe> getEmployes(){
-       Query qr = em.createNamedQuery("com.gp2.persistence.canpany.Employe.findAllEmplye");
+       Query qr = em.createNamedQuery("com.gp2.persistence.company.findAllEmployees");
         return qr.getResultList();        
    }
    

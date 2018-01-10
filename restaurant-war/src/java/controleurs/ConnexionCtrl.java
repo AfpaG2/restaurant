@@ -39,11 +39,10 @@ public class ConnexionCtrl implements SousControleur {
                 String fonction = gestionPersonnel.seconnecter(mdp);
                 request.setAttribute("dClasse", "info");
                 request.setAttribute("msg", "Binvenue : " + fonction);
+                
                 session.setAttribute("fonction", fonction);
-                page = "FrontControleur?section="+fonction+"-interface-affichage";
+                page = "FrontControleur?section="+fonction.toLowerCase().trim()+"-interface-affichage";
                 request.setAttribute("redirect", true);
-                
-                
 //                page = "/WEB-INF/" + fonction.toLowerCase() + "/" + fonction.toLowerCase() + ".jsp";
 
             } catch (CustomedException ex) {

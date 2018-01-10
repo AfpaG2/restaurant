@@ -3,22 +3,22 @@
     <servlet>
         <servlet-name>FrontControleur</servlet-name>
         <servlet-class>controleurs.FrontControleur</servlet-class>
-        <init-param>
-            
+       
           <init-param>
             <param-name>cuisinier-changerStatut-commande</param-name>
             <param-value>controleurs.cuisinier.ChangerStatutCommandeCtrl</param-value>
         </init-param>
+        
         <init-param>
             <param-name>cuisinier-changerStatut-Lignecommande</param-name>
             <param-value>controleurs.cuisinier.ChangerStatutLigneCommandeCtrl</param-value>
         </init-param>
-        <init-param> 
-            
-            
+        
+        <init-param>
             <param-name>panier-affichage</param-name>
             <param-value>controleurs.commande.PanierAffichageCtrl</param-value>
         </init-param>
+        
         <init-param>
             <param-name>panier-operations</param-name>
             <param-value>controleurs.commande.PanierOperationsCtrl</param-value>

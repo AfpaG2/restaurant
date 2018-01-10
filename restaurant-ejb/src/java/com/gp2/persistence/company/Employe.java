@@ -32,7 +32,7 @@ import javax.validation.constraints.Size;
 @NamedQueries({
     @NamedQuery(name = "com.gp2.persistence.company.findAllEmployees", query = "SELECT e FROM Employe e"),
     @NamedQuery(name = "com.gp2.persistence.company.findByName", query = "SELECT e FROM Employe e WHERE e.nom = :paramNom"),    
-    @NamedQuery(name = "com.gp2.persistence.company.findFonctionByCode", query = "SELECT distinct r.name FROM Employe e join e.roles r WHERE r.mdp = :paramMdp"),
+    @NamedQuery(name = "com.gp2.persistence.company.findFonctionByCode", query = "SELECT distinct r.name FROM Employe e join e.roles r WHERE r.mdp =:paramMdp"),
     
 })
 public class Employe implements Serializable {
