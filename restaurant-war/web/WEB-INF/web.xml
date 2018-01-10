@@ -115,4 +115,10 @@
         <local>com.gp2.metiers.GestionCommandeLocal</local>
         <ejb-link>restaurant-ejb.jar#GestionCommande</ejb-link>
     </ejb-local-ref>
+    <ejb-local-ref>
+        <ejb-ref-name>GestionCuisine</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>com.gp2.metiers.GestionCuisineLocal</local>
+        <ejb-link>restaurant-ejb.jar#GestionCuisine</ejb-link>
+    </ejb-local-ref>
 </web-app>

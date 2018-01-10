@@ -1481,6 +1481,8 @@ public class CreationData implements CreationDataLocal {
         em.persist(statut2002);
         em.persist(statut2003);
         em.persist(statut2004);
+        em.persist(statut2005);
+        em.persist(statut2006);
         em.persist(statut3001);
         em.persist(statut3002);
         em.persist(statut4001);
@@ -1549,6 +1551,5 @@ public class CreationData implements CreationDataLocal {
         em.flush();
     
     }
-
 
 }

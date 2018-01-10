@@ -1,17 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.gp2.metiers;
 
 import com.gp2.persistence.Statut;
 import com.gp2.persistence.carte.LignePanier;
 import com.gp2.persistence.commande.Commande;
-import com.gp2.persistence.commande.Emplacement;
 import com.gp2.persistence.commande.LigneCommande;
 import java.util.Collection;
-import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
