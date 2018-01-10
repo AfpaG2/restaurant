@@ -819,7 +819,7 @@ public class CreationData implements CreationDataLocal {
         
         
         
-        Produit  prdu3 = new Produit("Phô légumes et boeuf",12.5f,"pho-aux-legumes.jpg");
+        Produit  prdu3 = new Produit("Phô légumes et boeuf",12.5f,"Pho-aux-legumes.jpg");
         prdu3.setStock(10);
         soupes.getProduits().add(prdu3);
         prdu3.getIngredients().add(ing184);
