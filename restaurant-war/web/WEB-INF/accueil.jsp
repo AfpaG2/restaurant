@@ -48,11 +48,12 @@
         </div>
         <div class="grid_3">
             <div class="box maxheight">
-                <img src="images/${saladeLotus.image}" alt="">
-                <div class="title">${saladeLotus.nomProduit}</div>
-                
+                <a href="#">
+                    <img src="images/${saladeLotus.image}" alt="">
+                    <div class="title">${saladeLotus.nomProduit}</div>
+                </a>
                 <h4>Ingredients</h4>
-                
+
                 <c:forEach items="${saladeLotus.ingredients}" var="ingredient" begin="0" end="7" step="1">
                     <span>${ingredient.nomIngredient}, </span>
                 </c:forEach> ...
@@ -62,42 +63,48 @@
         </div>
         <div class="grid_3">
             <div class="box maxheight">
-                <img src="images/${saladeCalamar.image}" alt="">
-                <div class="title">${saladeCalamar.nomProduit}</div>
-                
+                <a href="#">
+                    <img src="images/${saladeCalamar.image}" alt="">
+                    <div class="title">${saladeCalamar.nomProduit}</div>
+                </a>
+
                 <h4>Ingredients</h4>
-                
+
                 <c:forEach items="${saladeCalamar.ingredients}" var="ingredient" begin="0" end="5" step="1">
                     <span>${ingredient.nomIngredient}, </span>
                 </c:forEach> ...
                 <br>
-                <a href="#">Plus d'infos</a>
+                <a href="#" class="plusInfos">Plus d'infos</a>
             </div>
         </div>
         <div class="grid_3">
             <div class="box maxheight">
-                <img src="images/${rizGluantTaro.image}" alt="">
-                <div class="title">${rizGluantTaro.nomProduit}</div>
-                
+                <a href="#">
+                    <img src="images/${rizGluantTaro.image}" alt="">
+                    <div class="title">${rizGluantTaro.nomProduit}</div>
+                </a>
+
                 <h4>Ingredients</h4>
                 <c:forEach items="${rizGluantTaro.ingredients}" var="ingredient" begin="0" end="5" step="1">
                     <span>${ingredient.nomIngredient}, </span>
                 </c:forEach> ...
                 <br>
-                <a href="#">Plus d'infos</a>
+                <a href="#" class="plusInfos">Plus d'infos</a>
             </div>
         </div>
         <div class="grid_3">
             <div class="box maxheight">
-                <img src="images/${phoLegumes.image}" alt="">
-                <div class="title">${phoLegumes.nomProduit}</div>
-                
+                <a href="#">
+                    <img src="images/${phoLegumes.image}" alt="">
+                    <div class="title">${phoLegumes.nomProduit}</div>
+                </a>
+
                 <h4>Ingredients</h4>
                 <c:forEach items="${phoLegumes.ingredients}" var="ingredient" begin="0" end="3" step="1">
                     <span>${ingredient.nomIngredient}, </span>
                 </c:forEach> ...
                 <br>
-                <a href="#">Plus d'infos</a>
+                <a href="#" class="plusInfos">Plus d'infos</a>
             </div>
         </div>
     </div>

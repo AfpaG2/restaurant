@@ -6,6 +6,7 @@
 package com.gp2.metiers;
 
 
+import com.gp2.persistence.Statut;
 import com.gp2.persistence.carte.LignePanier;
 import com.gp2.persistence.commande.Commande;
 import java.util.Collection;
@@ -23,6 +24,8 @@ public interface GestionCommandeLocal {
     public Commande changeStatutCommande(Commande commande);
     public Boolean modifierCommande(Commande commande);
     public Commande validerCommande(Collection<LignePanier> lp, String numTable);
+    public Commande validerCommande(Collection<LignePanier> lp);
+    public Commande changeStatutCommande(Commande commande, Statut statut);
     
     
 }

@@ -72,6 +72,7 @@
 
                         <nav id="bt-menu" class="bt-menu">
                             <a href="#" class="bt-menu-trigger"><span>Menu</span></a>
+
                             <ul>
                                 <li class="bt-icon ">
                                     <a href="${accueil}">Accueil</a>
@@ -103,10 +104,12 @@
                                     <a href="${contact}">Contacts</a>
                                 </li>
                             </ul>
+
                         </nav>
 
                         <div class="clear"></div>
                     </div>
+                            
                     <div class="clear"></div>
                 </div>
             </div>

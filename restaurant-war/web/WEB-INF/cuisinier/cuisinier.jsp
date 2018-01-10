@@ -57,5 +57,3 @@
     </div>
 </div> 
 <jsp:directive.include file="/WEB-INF/menus/newfooter.jsp" />
-
-
