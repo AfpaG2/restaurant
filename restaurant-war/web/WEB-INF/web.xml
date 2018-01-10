@@ -48,10 +48,6 @@
             <param-value>controleurs.management.EquipeAffichageCtrl</param-value>
         </init-param>
         <init-param>
-            <param-name>salle</param-name>
-            <param-value>controleurs.management.SalleAffichageCtrl</param-value>
-        </init-param>
-        <init-param>
             <param-name>contact</param-name>
             <param-value>controleurs.management.ContactAffichageCtrl</param-value>
         </init-param>
@@ -62,6 +58,10 @@
         <init-param>
             <param-name>donnees-create</param-name>
             <param-value>controleurs.DonneesCreateCtrl</param-value>
+        </init-param>
+        <init-param>
+            <param-name>salle</param-name>
+            <param-value>controleurs.client.EmplacementAffichageCtrl</param-value>
         </init-param>
     </servlet>
     <servlet-mapping>
@@ -86,12 +86,6 @@
         <ejb-link>restaurant-ejb.jar#CreationData</ejb-link>
     </ejb-local-ref>
     <ejb-local-ref>
-        <ejb-ref-name>GestionCatalogue1</ejb-ref-name>
-        <ejb-ref-type>Session</ejb-ref-type>
-        <local>com.gp2.metiers.GestionCatalogueLocal</local>
-        <ejb-link>restaurant-ejb.jar#GestionCatalogue</ejb-link>
-    </ejb-local-ref>
-    <ejb-local-ref>
         <ejb-ref-name>GestionPersonnel</ejb-ref-name>
         <ejb-ref-type>Session</ejb-ref-type>
         <local>com.gp2.metiers.GestionPersonnelLocal</local>
@@ -104,43 +98,13 @@
         <ejb-link>restaurant-ejb.jar#GestionProduit</ejb-link>
     </ejb-local-ref>-->
     <ejb-local-ref>
-        <ejb-ref-name>GestionCatalogue2</ejb-ref-name>
-        <ejb-ref-type>Session</ejb-ref-type>
-        <local>com.gp2.metiers.GestionCatalogueLocal</local>
-        <ejb-link>restaurant-ejb.jar#GestionCatalogue</ejb-link>
-    </ejb-local-ref>
-    <ejb-local-ref>
         <ejb-ref-name>GestionEmplacement</ejb-ref-name>
         <ejb-ref-type>Session</ejb-ref-type>
         <local>com.gp2.metiers.GestionEmplacementLocal</local>
         <ejb-link>restaurant-ejb.jar#GestionEmplacement</ejb-link>
     </ejb-local-ref>
     <ejb-local-ref>
-        <ejb-ref-name>GestionPersonnel1</ejb-ref-name>
-        <ejb-ref-type>Session</ejb-ref-type>
-        <local>com.gp2.metiers.GestionPersonnelLocal</local>
-        <ejb-link>restaurant-ejb.jar#GestionPersonnel</ejb-link>
-    </ejb-local-ref>
-    <ejb-local-ref>
-        <ejb-ref-name>GestionPersonnel2</ejb-ref-name>
-        <ejb-ref-type>Session</ejb-ref-type>
-        <local>com.gp2.metiers.GestionPersonnelLocal</local>
-        <ejb-link>restaurant-ejb.jar#GestionPersonnel</ejb-link>
-    </ejb-local-ref>
-    <ejb-local-ref>
-        <ejb-ref-name>GestionCatalogue3</ejb-ref-name>
-        <ejb-ref-type>Session</ejb-ref-type>
-        <local>com.gp2.metiers.GestionCatalogueLocal</local>
-        <ejb-link>restaurant-ejb.jar#GestionCatalogue</ejb-link>
-    </ejb-local-ref>
-    <ejb-local-ref>
         <ejb-ref-name>GestionPanier</ejb-ref-name>
-        <ejb-ref-type>Session</ejb-ref-type>
-        <local>com.gp2.metiers.GestionPanierLocal</local>
-        <ejb-link>restaurant-ejb.jar#GestionPanier</ejb-link>
-    </ejb-local-ref>
-    <ejb-local-ref>
-        <ejb-ref-name>GestionPanier1</ejb-ref-name>
         <ejb-ref-type>Session</ejb-ref-type>
         <local>com.gp2.metiers.GestionPanierLocal</local>
         <ejb-link>restaurant-ejb.jar#GestionPanier</ejb-link>

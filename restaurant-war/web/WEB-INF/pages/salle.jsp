@@ -6,6 +6,8 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <jsp:directive.include file="/WEB-INF/menus/header.jsp" />
 
@@ -31,91 +33,237 @@
 
             <c:url value="FrontControleur?section=accueil" var="accueil" />
             <form class="seatForm" method="GET" action="${accueil}" accept-charset="UTF-8">
-                <ol class="seats">
 
-                    <!-- Partie de Gauche -->
+                <c:forEach items="${emplacements}" var="emplacement" >
+                    <c:if test="${emplacement.numeroTable eq 'seat1A' || emplacement.numeroTable eq 'seat1B' }">
 
-                    <li class="seat">
-                        <input type="checkbox" id="1A" name="seat1A"/>
-                        <label for="1A">1A</label>
-                    </li>
+                        <!-- Partie de Gauche -->
+                        <c:if test="${emplacement.numeroTable eq 'seat1A'}">
+                            <ol class="seats">
+                                <li class="seat">
+                                    <c:choose>
+                                        <c:when test="${emplacement.statut.id == 6001}">
+                                            <input type="checkbox" id="1A" name="${emplacement.numeroTable}"/>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <input type="checkbox" id="1A" name="${emplacement.numeroTable}" disabled="disabled"/> 
+                                        </c:otherwise>
+                                    </c:choose>
 
-                    <li class="seat">
-                        <input type="checkbox" id="1B" name="seat1B"/>
-                        <label for="1B">1B</label>
-                    </li>
+                                    <label for="1A">1A</label>
+                                </li>
+                            </c:if>
 
-                </ol>
+                            <c:if test="${emplacement.numeroTable eq 'seat1B'}">
+                                <li class="seat">
+                                    <c:choose>
+                                        <c:when test="${emplacement.statut.id == 6001}">
+                                            <input type="checkbox" id="1B" name="${emplacement.numeroTable}"/>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <input type="checkbox" id="1B" name="${emplacement.numeroTable}" disabled="disabled"/>
+                                        </c:otherwise>
+                                    </c:choose>
+                                            
+                                    <label for="1B">1B</label>
+                                </li>
+                            </ol>
+                        </c:if>
 
-                <ol class="seats">
+                    </c:if>
+                </c:forEach>
 
-                    <li class="seat">
-                        <input type="checkbox" id="1C" name="seat1C"/>
-                        <label for="1C">1C</label>
-                    </li>
+                <c:forEach items="${emplacements}" var="emplacement" >
+                    <c:if test="${emplacement.numeroTable eq 'seat1C' || emplacement.numeroTable eq 'seat1D' }">
+                        <!-- Partie de Gauche -->
+                        <c:if test="${emplacement.numeroTable eq 'seat1C'}">
 
-                    <li class="seat">
-                        <input type="checkbox" id="1D" name="seat1D"/>
-                        <label for="1D">1D</label>
-                    </li>
+                            <ol class="seats">
+                                <li class="seat">
+                                    <c:choose>
+                                        <c:when test="${emplacement.statut.id == 6001}">
+                                            <input type="checkbox" id="1C" name="${emplacement.numeroTable}"/>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <input type="checkbox" id="1C" name="${emplacement.numeroTable}" disabled="disabled"/>
+                                        </c:otherwise>
+                                    </c:choose>
+                                            
+                                    <label for="1C">1C</label>
+                                </li>
+                            </c:if>
 
-                </ol>
+                            <c:if test="${emplacement.numeroTable eq 'seat1D'}">
+                                <li class="seat">
+                                    <c:choose>
+                                        <c:when test="${emplacement.statut.id == 6001}">
+                                            <input type="checkbox" id="1D" name="${emplacement.numeroTable}"/>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <input type="checkbox" id="1D" name="${emplacement.numeroTable}" disabled="disabled"/>
+                                        </c:otherwise>
+                                    </c:choose>
+                                            
+                                    <label for="1D">1D</label>
+                                </li>
+                            </ol>
+                        </c:if>
 
-                <ol class="seats">
+                    </c:if>
+                </c:forEach>  
 
-                    <!-- Partie de droite haute -->
+                <c:forEach items="${emplacements}" var="emplacement" >
+                    <c:if test="${emplacement.numeroTable eq 'seat2A' || emplacement.numeroTable eq 'seat2C' }">
+                        <!-- Partie de droite haute -->
+                        <c:if test="${emplacement.numeroTable eq 'seat2A'}">
+                            <ol class="seats">
+                                <li class="seat">
+                                    <c:choose>
+                                        <c:when test="${emplacement.statut.id == 6001}">
+                                            <input type="checkbox" id="2A" name="${emplacement.numeroTable}"/>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <input type="checkbox" id="2A" name="${emplacement.numeroTable}" disabled="disabled"/>
+                                        </c:otherwise>
+                                    </c:choose>
+                                            
+                                    <label for="2A">2A</label>
+                                </li>
+                            </c:if>
 
-                    <li class="seat">
-                        <input type="checkbox" id="2A" name="seat2A"/>
-                        <label for="2A">2A</label>
-                    </li>
+                            <c:if test="${emplacement.numeroTable eq 'seat2C'}">
+                                <li class="seat">
+                                    <c:choose>
+                                        <c:when test="${emplacement.statut.id == 6001}">
+                                            <input type="checkbox" id="2C" name="${emplacement.numeroTable}"/>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <input type="checkbox" id="2C" name="${emplacement.numeroTable}" disabled="disabled"/>
+                                        </c:otherwise>
+                                    </c:choose>
+                                            
+                                    <label for="2C">2C</label>
+                                </li>
+                            </ol>
+                        </c:if>
 
-                    <li class="seat">
-                        <input type="checkbox" id="2C" name="seat2C"/>
-                        <label for="2C">2C</label>
-                    </li>
+                    </c:if>
+                </c:forEach>
 
-                </ol>
+                <c:forEach items="${emplacements}" var="emplacement" >
+                    <c:if test="${emplacement.numeroTable eq 'seat2B' || emplacement.numeroTable eq 'seat2D' }">
+                        <!-- Partie de droite haute -->
+                        <c:if test="${emplacement.numeroTable eq 'seat2B'}">
+                            <ol class="seats">
+                                <li class="seat">
+                                    <c:choose>
+                                        <c:when test="${emplacement.statut.id == 6001}">
+                                            <input type="checkbox" id="2B" name="${emplacement.numeroTable}"/>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <input type="checkbox" id="2B" name="${emplacement.numeroTable}" disabled="disabled"/>
+                                        </c:otherwise>
+                                    </c:choose>
+                                            
+                                    <label for="2B">2B</label>
+                                </li>
+                            </c:if>
 
-                <ol class="seats">
-                    <li class="seat">
-                        <input type="checkbox" id="2B" name="seat2B"/>
-                        <label for="2B">2B</label>
-                    </li>
+                            <c:if test="${emplacement.numeroTable eq 'seat2D'}">
+                                <li class="seat">
+                                    <c:choose>
+                                        <c:when test="${emplacement.statut.id == 6001}">
+                                            <input type="checkbox" id="2D" name="${emplacement.numeroTable}"/>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <input type="checkbox" id="2D" name="${emplacement.numeroTable}" disabled="disabled"/>
+                                        </c:otherwise>
+                                    </c:choose>
+                                            
+                                    <label for="2D">2D</label>
+                                </li>
+                            </ol>
+                        </c:if>
 
-                    <li class="seat">
-                        <input type="checkbox" id="2D" name="seat2D"/>
-                        <label for="2D">2D</label>
-                    </li>
+                    </c:if>
+                </c:forEach>
 
-                </ol>
 
-                <ol class="seats">
-                    <!-- Partie de droite basse -->
+                <c:forEach items="${emplacements}" var="emplacement" >
+                    <c:if test="${emplacement.numeroTable eq 'seat3A' || emplacement.numeroTable eq 'seat3C' }">
+                        <!-- Partie de droite basse -->
+                        <c:if test="${emplacement.numeroTable eq 'seat3A'}">
+                            <ol class="seats">
+                                <li class="seat">
+                                    <c:choose>
+                                        <c:when test="${emplacement.statut.id == 6001}">
+                                            <input type="checkbox" id="3A" name="${emplacement.numeroTable}"/>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <input type="checkbox" id="3A" name="${emplacement.numeroTable}" disabled="disabled"/>
+                                        </c:otherwise>
+                                    </c:choose>
+                                            
+                                    <label for="3A">3A</label>
+                                </li>
+                            </c:if>
 
-                    <li class="seat">
-                        <input type="checkbox" id="3A" name="seat3A"/>
-                        <label for="3A">3A</label>
-                    </li>
+                            <c:if test="${emplacement.numeroTable eq 'seat3C'}">
+                                <li class="seat">
+                                    <c:choose>
+                                        <c:when test="${emplacement.statut.id == 6001}">
+                                            <input type="checkbox" id="3C" name="${emplacement.numeroTable}"/>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <input type="checkbox" id="3C" name="${emplacement.numeroTable}" disabled="disabled"/>
+                                        </c:otherwise>
+                                    </c:choose>
+                                            
+                                    <label for="3C">3C</label>
+                                </li>
+                            </ol>
+                        </c:if>
 
-                    <li class="seat">
-                        <input type="checkbox" id="3C" name="seat3C"/>
-                        <label for="3C">3C</label>
-                    </li>
+                    </c:if>
+                </c:forEach>
 
-                </ol>
+                <c:forEach items="${emplacements}" var="emplacement" >
+                    <c:if test="${emplacement.numeroTable eq 'seat3B' || emplacement.numeroTable eq 'seat3D' }">
+                        <!-- Partie de droite basse -->
+                        <c:if test="${emplacement.numeroTable eq 'seat3B'}">
+                            <ol class="seats">
+                                <li class="seat">
+                                    <c:choose>
+                                        <c:when test="${emplacement.statut.id == 6001}">
+                                            <input type="checkbox" id="3B" name="${emplacement.numeroTable}"/>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <input type="checkbox" id="3B" name="${emplacement.numeroTable}" disabled="disabled"/>
+                                        </c:otherwise>
+                                    </c:choose>
+                                            
+                                    <label for="3B">3B</label>`
+                                </li>
+                            </c:if>
 
-                <ol class="seats">
-                    <li class="seat">
-                        <input type="checkbox" id="3B" name="seat3B"/>
-                        <label for="3B">3B</label>
-                    </li>
+                            <c:if test="${emplacement.numeroTable eq 'seat3D'}">
+                                <li class="seat">
+                                    <c:choose>
+                                        <c:when test="${emplacement.statut.id == 6001}">
+                                            <input type="checkbox" id="3D" name="${emplacement.numeroTable}"/>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <input type="checkbox" id="3D" name="${emplacement.numeroTable}" disabled="disabled"/>
+                                        </c:otherwise>
+                                    </c:choose>
+                                            
+                                    <label for="3D">3D</label>
+                                </li>
+                            </ol>
+                        </c:if>
 
-                    <li class="seat">
-                        <input type="checkbox" id="3D" name="seat3D"/>
-                        <label for="3D">3D</label>
-                    </li>
-                </ol>
+                    </c:if>
+                </c:forEach>
 
                 <input class="tableSelectionne" type="submit" name="submit" value="Valider votre sélection de Tables" />
             </form>
@@ -125,11 +273,13 @@
             <h3>Reserver Votre Table</h3>
             <img src="images/page5_img1.jpg" alt="" class="img_inner fleft">
             <div class="extra_wrapper">
-                <p class="col1">Hoivamus at magna non nunc tristiquencus. Fliquam nibh ante, egestas id dictum modo luctus libero. Praesent faucibus malesuad faucibu. </p>
-                <p>Dorem ipsum dolor sit amet, consecteturer adipiscing elit. Nullam consectetur orci se nulla facilisis consequat. Kurabitur vellore sit amet nulla ullamcorper ermentum. In vitae varius auguem.</p>
+                <p class="col1">Un voyage culinaire au coeur du continent Asiatique ? Venez découvrir les saveurs de la cuisine vietnamienne notamment son copieux Bo-Bun, ses nems aux crevettes et ses parfums délicats de coco et citronnelle, la cuisine chinoise et ses délicieuses nouilles sautées, ou encore, la fraîcheur des sushis japonais (à venir) … </p>
+                <p>Selon vos préférences, choisissez parmi notre sélection à la carte ou suivant des formules concoctées par nos Chefs étoilés.</p>
             </div>
-            <p>Gamus at magna non nunc tristique rhoncus. Aliquam nibh ante, egestas id dictum ammodo luctus libero. Praesent faucibus malesuada faucibus. Forem ipsum dolor sit ametconsectetur adipiscing elit. <span class="cont_phone">For Parties call (023) 101-1100</span> . Nullam  consectetur orci sed. </p>
-            Murabitur vel lorem sit amet nulla ullamcorper fermentum. In vitae varius augue, eu consectetur ligula. Etiam dui eros. <span class="cont_phone">For Parties call (023) 101-1100</span> <br>
+            <p>Ce ne sont que des exemples de plats que vous découvrirez dans votre restaurant <a class="col1" href="#">Minh-Thuong</a>.</p> <p>Pleins d'autres surpises vous y attendent! </p>
+            <p>LE PLUS – Les prix attractifs du restaurant Minh-Thuong et ses portions généreuses.. </p>
+            <p><span class="cont_phone">Pour les soirées en groupe, appeler le (+33) 01.78.98.76.89</span></p>
+            Les promotions sont également disponible en réservant sur <a class="col1" href="#">Minh-Thuong.fr</a> ou en appelant directement :<span class="cont_phone"> le (+33) 01.78.98.76.89</span> <br>
             <a href="#" class="reserv"><span>@ </span> Cliquez ici pour réserver en ligne</a>
         </div>
 

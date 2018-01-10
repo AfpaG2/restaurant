@@ -87,7 +87,7 @@
 .seat label[for="1B"] {
     position: Absolute;
     top: 305px;
-    left: 53px;
+    left: 54px;
 }
 
 .seat label[for="1C"] {
@@ -99,7 +99,7 @@
 .seat label[for="1D"] {
     position: Absolute;
     top: 493px;
-    left: 51px;
+    left: 52px;
 }
 
 .seat label[for="2A"] {
@@ -147,7 +147,7 @@
 .seat label[for="3D"] {
     position: Absolute;
     top: 555px;
-    left: 558px;
+    left: 555px;
 }
 
 .seat label:hover {

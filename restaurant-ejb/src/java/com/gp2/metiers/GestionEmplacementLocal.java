@@ -5,13 +5,15 @@
  */
 package com.gp2.metiers;
 
+import com.gp2.persistence.commande.Emplacement;
+import java.util.List;
 import javax.ejb.Local;
 
-/**
- *
- * @author youssef
- */
 @Local
 public interface GestionEmplacementLocal {
+    
+    public List<Emplacement> findAllTables();
+    public Emplacement findTableByNum(String numeroTable);
+    public List<Emplacement> findAllTablesByStatut(int idStatut);
     
 }
