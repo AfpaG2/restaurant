@@ -24,7 +24,7 @@ public class ChangerStatutLigneCommandeCtrl implements SousControleur {
             
             try {
                 gestionCuisine.changerStatutLigneCommande(idStatut, idLignecommande);
-                page = "FrontControleur?section=affichage-interface-cuisinier";
+                page = "FrontControleur?section=cuisinier-interface-affichage";
                 request.setAttribute("redirect", true);
             } catch (CustomedException ex) {
                 request.setAttribute("erreur", ex.getMessage());

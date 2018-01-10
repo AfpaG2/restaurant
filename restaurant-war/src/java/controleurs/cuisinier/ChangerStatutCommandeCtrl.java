@@ -33,7 +33,7 @@ public class ChangerStatutCommandeCtrl implements SousControleur {
             
             try {
                 gestionCuisine.changerStatutCommande(idStatut, idCommande);
-                page = "FrontControleur?section=affichage-interface-cuisinier";
+                page = "FrontControleur?section=cuisinier-interface-affichage";
                 request.setAttribute("redirect", true);
             } catch (CustomedException ex) {
                 request.setAttribute("erreur", ex.getMessage());

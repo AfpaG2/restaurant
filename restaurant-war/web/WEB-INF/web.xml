@@ -4,6 +4,18 @@
         <servlet-name>FrontControleur</servlet-name>
         <servlet-class>controleurs.FrontControleur</servlet-class>
         <init-param>
+            
+          <init-param>
+            <param-name>cuisinier-changerStatut-commande</param-name>
+            <param-value>controleurs.cuisinier.ChangerStatutCommandeCtrl</param-value>
+        </init-param>
+        <init-param>
+            <param-name>cuisinier-changerStatut-Lignecommande</param-name>
+            <param-value>controleurs.cuisinier.ChangerStatutLigneCommandeCtrl</param-value>
+        </init-param>
+        <init-param> 
+            
+            
             <param-name>panier-affichage</param-name>
             <param-value>controleurs.commande.PanierAffichageCtrl</param-value>
         </init-param>
@@ -19,17 +31,17 @@
             <param-name>connexion</param-name>
             <param-value>controleurs.ConnexionCtrl</param-value>
         </init-param>
-        <init-param>
-            <param-name>serveur</param-name>
+        <init-param>            
+            <param-name>serveur-interface-affichage</param-name>
             <param-value>controleurs.serveur.ServeurInterfaceCtrl</param-value>
         </init-param>
-        <init-param>
-            <param-name>caissier</param-name>
+        <init-param>            
+            <param-name>caissier-interface-affichage</param-name>
             <param-value>controleurs.caissier.CaissierInterfaceCtrl</param-value>
         </init-param>
         <init-param>
-            <param-name>cuisinier</param-name>
-            <param-value>controleurs.serveur.CuisinierInterfaceCtrl</param-value>
+            <param-name>cuisinier-interface-affichage</param-name>
+            <param-value>controleurs.cuisinier.CuisinierAffichageCommandeCtrl</param-value>
         </init-param>
         <init-param>
             <param-name>accueil</param-name>

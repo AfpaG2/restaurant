@@ -13,8 +13,8 @@ public class GestionEmplacement implements GestionEmplacementLocal {
     @PersistenceContext(unitName = "restaurant-ejbPU")
     private EntityManager em;
 
-    @Override
-    @SuppressWarnings("unchecked")
+    
+    @Override    
     public List<Emplacement> findAllTables() {
         
         Query query = em.createNamedQuery("com2.gp2.persistence.commande.findAllEmplacements");

@@ -13,6 +13,8 @@ import com.gp2.persistence.company.Poste;
 import com.gp2.persistence.company.Restaurant;
 import com.gp2.persistence.carte.Carte;
 import com.gp2.persistence.carte.TypePlat;
+import com.gp2.persistence.commande.Commande;
+import com.gp2.persistence.commande.LigneCommande;
 import com.gp2.persistence.company.Role;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -1454,6 +1456,50 @@ public class CreationData implements CreationDataLocal {
         manager.setRestaurant(rest);
         manager.getRoles().add(RoleManager);
                
+        
+        Commande com1 = new Commande();
+        com1.setEmplacement(Empl28);
+        com1.setStatut(statut1002);
+        Date dateCommande1 = new GregorianCalendar(2018, 1, 10).getTime();
+        com1.setDateCommande(dateCommande1);
+        
+        LigneCommande lc1 = new LigneCommande();
+        lc1.setProduit(produ9);
+        lc1.setStatut(statut2004);        
+        lc1.setCommande(com1);
+        
+        LigneCommande lc11 = new LigneCommande();
+        lc11.setProduit(prdu5);
+        lc11.setStatut(statut2004);        
+        lc11.setCommande(com1);
+        
+        LigneCommande lc12 = new LigneCommande();
+        lc12.setProduit(produi1);
+        lc12.setStatut(statut2004);        
+        lc12.setCommande(com1);
+        
+        Commande com2 = new Commande();
+        com1.setEmplacement(Empl01);
+        com1.setStatut(statut1002);
+        Date dateCommande2 = new GregorianCalendar(2018, 1, 9).getTime();
+        com2.setDateCommande(dateCommande2);
+        
+        LigneCommande lc13 = new LigneCommande();
+        lc13.setProduit(produ6);
+        lc13.setStatut(statut2004);        
+        lc13.setCommande(com2);
+        
+        LigneCommande lc14 = new LigneCommande();
+        lc14.setProduit(produ8);
+        lc14.setStatut(statut2004);        
+        lc14.setCommande(com2);
+        
+        
+        em.persist(lc1);
+        em.persist(lc11);
+        em.persist(lc12);
+        em.persist(lc13);
+        em.persist(lc14);
         
         em.persist(serveur);
         em.persist(caissier);
