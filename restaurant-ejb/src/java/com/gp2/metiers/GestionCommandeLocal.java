@@ -22,7 +22,7 @@ public interface GestionCommandeLocal {
     public Collection<Commande> getAllCommandes();
     public Commande changeStatutCommande(Commande commande);
     public Boolean modifierCommande(Commande commande);
-    public Commande validerCommande(Collection<LignePanier> lp);
+    public Commande validerCommande(Collection<LignePanier> lp, String numTable);
     
     
 }

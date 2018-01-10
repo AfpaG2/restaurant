@@ -42,14 +42,22 @@ public class GestionCommande implements GestionCommandeLocal {
         return listCommande; 
     }
     
-    public Commande validerCommande(Collection<LignePanier> lp){
+    public Commande validerCommande(Collection<LignePanier> lp, String numTable){
         Commande com = new Commande();
         for (LignePanier lignePanier : lp) {
+            try {
+            Emplacement place = em.find(Emplacement.class, numTable);
+            Statut statut = em.find(Statut.class, 1001);
             LigneCommande ligne = new LigneCommande();
             ligne.setPrixHT(lignePanier.getPrixHT());
             ligne.setQuantite(lignePanier.getQte());
             ligne.setProduit(lignePanier.getProduit());
-            com.getLigneCommandes().add(ligne);
+            com.setEmplacement(place);
+            com.setStatut(statut);
+            com.getLigneCommandes().add(ligne);   
+            } catch (Exception e) {
+                System.out.println("erreur validation commander : "+e.getMessage());
+            }
         }
         
         em.persist(com);
@@ -79,6 +87,10 @@ public class GestionCommande implements GestionCommandeLocal {
 
     @Override
     public Commande changeStatutCommande(Commande commande) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Commande validerCommande(Collection<LignePanier> lp) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
