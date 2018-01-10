@@ -17,6 +17,12 @@ public class ServeurInterfaceCtrl implements SousControleur {
 
     @Override
     public String executer(HttpServletRequest request, HttpServletResponse response) {
-       return null; 
+        String page = "/WEB-INF/serveur/serveur.jsp";
+        
+        
+        
+        
+        
+       return page; 
     }
 }

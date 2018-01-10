@@ -17,6 +17,13 @@ public class CaissierInterfaceCtrl implements SousControleur {
 
     @Override
     public String executer(HttpServletRequest request, HttpServletResponse response) {
-       return null; 
+        
+        String page = "/WEB-INF/caissier/caissier.jsp";
+       
+        
+        
+        
+        
+        return page; 
     }
 }
