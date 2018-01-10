@@ -55,7 +55,9 @@ public class CreationData implements CreationDataLocal {
         Statut statut2001 = new Statut(2001, "ligneCommande", "disponible");
         Statut statut2002 = new Statut(2002, "ligneCommande", "annulé");
         Statut statut2003 = new Statut(2003, "ligneCommande", "indisponible");
-        Statut statut2004 = new Statut(2004, "ligneCommande", "prêt");
+        Statut statut2004 = new Statut(2004, "ligneCommande", "En attente de préparation");
+        Statut statut2005 = new Statut(2005, "ligneCommande", "En préparation");
+        Statut statut2006 = new Statut(2006, "ligneCommande", "prêt");
         
         // produit 30
         Statut statut3001 = new Statut(3001, "produit", "disponible");
