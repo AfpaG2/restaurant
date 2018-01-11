@@ -40,6 +40,15 @@ public class GestionEmplacement implements GestionEmplacementLocal {
         return query.getResultList();
     }
 
+    @Override
+    @SuppressWarnings("unchecked")
+    public List<Emplacement> findAllTerminals(int idStatut) {
+        Query query = em.createNamedQuery("com2.gp2.persistence.commande.findAllTerminals")
+                .setParameter("paramIdStatut", idStatut);
+        
+        return query.getResultList();
+    }
+
     public void persist(Object object) {
         em.persist(object);
     }

@@ -15,5 +15,6 @@ public interface GestionEmplacementLocal {
     public List<Emplacement> findAllTables();
     public Emplacement findTableByNum(String numeroTable);
     public List<Emplacement> findAllTablesByStatut(int idStatut);
+    public List<Emplacement> findAllTerminals(int idStatut);
     
 }

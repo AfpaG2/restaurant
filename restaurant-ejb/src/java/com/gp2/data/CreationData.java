@@ -113,34 +113,30 @@ public class CreationData implements CreationDataLocal {
         Emplacement Empl16 = new Emplacement("seat4D",2);
         Empl16.setStatut(statut6001);
         
-        Emplacement Empl17 = new Emplacement("26",4);
+        Emplacement Empl17 = new Emplacement("terminal1A1B");
         Empl17.setStatut(statut6001);
-        Emplacement Empl18 = new Emplacement("27",4);
+        Emplacement Empl18 = new Emplacement("terminal1C1D");
         Empl18.setStatut(statut6001);        
-        Emplacement Empl19 = new Emplacement("28",4);
+        Emplacement Empl19 = new Emplacement("terminal2A2C");
         Empl19.setStatut(statut6001);
-        Emplacement Empl20 = new Emplacement("29",4);
+        Emplacement Empl20 = new Emplacement("terminal2B2D");
         Empl20.setStatut(statut6001);
-        Emplacement Empl21 = new Emplacement("30",8);
+        Emplacement Empl21 = new Emplacement("terminal3A3C");
         Empl21.setStatut(statut6001);
-        Emplacement Empl22 = new Emplacement("31",8);
+        Emplacement Empl22 = new Emplacement("terminal3B3D");
         Empl22.setStatut(statut6001);
-        Emplacement Empl23 = new Emplacement("32",8);
+        Emplacement Empl23 = new Emplacement("terminal4A4C");
         Empl23.setStatut(statut6001);
-        Emplacement Empl24 = new Emplacement("33",10);
+        Emplacement Empl24 = new Emplacement("terminal4B4D");
         Empl24.setStatut(statut6001);
-        Emplacement Empl25 = new Emplacement("34",10);
+        Emplacement Empl25 = new Emplacement("terminal1Salle");
         Empl25.setStatut(statut6001);
-        Emplacement Empl26 = new Emplacement("35",10);
+        Emplacement Empl26 = new Emplacement("terminal2Salle");
         Empl26.setStatut(statut6001);
-        Emplacement Empl27 = new Emplacement("36",10);
+        Emplacement Empl27 = new Emplacement("terminal3Salle");
         Empl27.setStatut(statut6001);
-        Emplacement Empl28 = new Emplacement("37",10);
+        Emplacement Empl28 = new Emplacement("terminal4Salle");
         Empl28.setStatut(statut6001);
-        
-        
-        
-        
        
         Ingredient ing01 = new Ingredient("Boeuf");
         ing01.setStatut(statut4001);
@@ -749,7 +745,7 @@ public class CreationData implements CreationDataLocal {
         produit10.setCodeTVA(tva20);
         tp01.getProduits().add(produit10);
         
-        Produit  produit11 = new Produit("Kir royal",36.9f,"kir-royal.png");
+        Produit  produit11 = new Produit("Kir royal",5.9f,"kir-royal.png");
         produit11.setStock(10);
         produit11.getInfosProduits().add(infosPr03);
         produit11.getIngredients().add(ingd02);
@@ -949,7 +945,7 @@ public class CreationData implements CreationDataLocal {
         pates.getProduits().add(produ3);
         fruitMer.getProduits().add(produ3);
         
-        Produit produ4 = new Produit("Nouilles sautées aux légumes", 12.3f,"nouilles-de-riz-sautees-aux-legumes.jpg");
+        Produit produ4 = new Produit("Nouilles aux légumes", 12.3f,"nouilles-de-riz-sautees-aux-legumes.jpg");
         produ4.setStock(10);
         produ4.setCodeTVA(tva10);
         pates.getProduits().add(produ4);        
@@ -1479,8 +1475,8 @@ public class CreationData implements CreationDataLocal {
         lc12.setCommande(com1);
         
         Commande com2 = new Commande();
-        com1.setEmplacement(Empl03);
-        com1.setStatut(statut1002);
+        com2.setEmplacement(Empl03);
+        com2.setStatut(statut1002);
         Date dateCommande2 = new GregorianCalendar(2018, 1, 9).getTime();
         com2.setDateCommande(dateCommande2);
         

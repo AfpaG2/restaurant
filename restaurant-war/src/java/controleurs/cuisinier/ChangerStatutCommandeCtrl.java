@@ -26,13 +26,14 @@ public class ChangerStatutCommandeCtrl implements SousControleur {
     public String executer(HttpServletRequest request, HttpServletResponse response) {
         GestionCuisineLocal gestionCuisine = lookupGestionCuisineLocal();
         String page = "/WEB-INF/cuisinier/cuisinier.jsp";
-        String idStatut = request.getParameter("statut");
-        String idCommande = request.getParameter("commande");
         
-        if (idStatut != null && idCommande != null) {
+        String idcommande = request.getParameter("idCommande");
+        String valeurStatut = request.getParameter("statutCommande"+idcommande);
+            
+        if (valeurStatut != null && idcommande != null) {
             
             try {
-                gestionCuisine.changerStatutCommande(idStatut, idCommande);
+                gestionCuisine.changerStatutCommande(valeurStatut, idcommande);
                 page = "FrontControleur?section=cuisinier-interface-affichage";
                 request.setAttribute("redirect", true);
             } catch (CustomedException ex) {

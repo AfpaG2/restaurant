@@ -64,7 +64,7 @@
                                             <input type="checkbox" id="1B" name="${emplacement.numeroTable}" disabled="disabled"/>
                                         </c:otherwise>
                                     </c:choose>
-                                            
+
                                     <label for="1B">1B</label>
                                 </li>
                             </ol>
@@ -88,7 +88,7 @@
                                             <input type="checkbox" id="1C" name="${emplacement.numeroTable}" disabled="disabled"/>
                                         </c:otherwise>
                                     </c:choose>
-                                            
+
                                     <label for="1C">1C</label>
                                 </li>
                             </c:if>
@@ -103,7 +103,7 @@
                                             <input type="checkbox" id="1D" name="${emplacement.numeroTable}" disabled="disabled"/>
                                         </c:otherwise>
                                     </c:choose>
-                                            
+
                                     <label for="1D">1D</label>
                                 </li>
                             </ol>
@@ -126,7 +126,7 @@
                                             <input type="checkbox" id="2A" name="${emplacement.numeroTable}" disabled="disabled"/>
                                         </c:otherwise>
                                     </c:choose>
-                                            
+
                                     <label for="2A">2A</label>
                                 </li>
                             </c:if>
@@ -141,7 +141,7 @@
                                             <input type="checkbox" id="2C" name="${emplacement.numeroTable}" disabled="disabled"/>
                                         </c:otherwise>
                                     </c:choose>
-                                            
+
                                     <label for="2C">2C</label>
                                 </li>
                             </ol>
@@ -164,7 +164,7 @@
                                             <input type="checkbox" id="2B" name="${emplacement.numeroTable}" disabled="disabled"/>
                                         </c:otherwise>
                                     </c:choose>
-                                            
+
                                     <label for="2B">2B</label>
                                 </li>
                             </c:if>
@@ -179,7 +179,7 @@
                                             <input type="checkbox" id="2D" name="${emplacement.numeroTable}" disabled="disabled"/>
                                         </c:otherwise>
                                     </c:choose>
-                                            
+
                                     <label for="2D">2D</label>
                                 </li>
                             </ol>
@@ -203,7 +203,7 @@
                                             <input type="checkbox" id="3A" name="${emplacement.numeroTable}" disabled="disabled"/>
                                         </c:otherwise>
                                     </c:choose>
-                                            
+
                                     <label for="3A">3A</label>
                                 </li>
                             </c:if>
@@ -218,7 +218,7 @@
                                             <input type="checkbox" id="3C" name="${emplacement.numeroTable}" disabled="disabled"/>
                                         </c:otherwise>
                                     </c:choose>
-                                            
+
                                     <label for="3C">3C</label>
                                 </li>
                             </ol>
@@ -241,7 +241,7 @@
                                             <input type="checkbox" id="3B" name="${emplacement.numeroTable}" disabled="disabled"/>
                                         </c:otherwise>
                                     </c:choose>
-                                            
+
                                     <label for="3B">3B</label>`
                                 </li>
                             </c:if>
@@ -256,7 +256,7 @@
                                             <input type="checkbox" id="3D" name="${emplacement.numeroTable}" disabled="disabled"/>
                                         </c:otherwise>
                                     </c:choose>
-                                            
+
                                     <label for="3D">3D</label>
                                 </li>
                             </ol>
@@ -312,6 +312,8 @@
             </div>
         </div>
     </div>
+
+    <%@include file="/WEB-INF/menus/aide.jsp" %>
 </div>
 
 

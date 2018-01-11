@@ -13,7 +13,7 @@
 
 <!--==============================Content=================================-->
 
-<div class="content"><div class="ic">More Website Templates @ TemplateMonster.com - December 02, 2013!</div>
+<div class="content" style="padding-bottom: 0"><div class="ic">More Website Templates @ TemplateMonster.com - December 02, 2013!</div>
     <div class="container_12">
         <div class="grid_12">
             <h3 class="head2">Notre Carte</h3>
@@ -179,8 +179,8 @@
                             <div class="col2">
                                 <span class="col3">
                                     <a href="#">${formule.nomFormul}
-                                    <br>    
-                                    ${formule.descrpition}</a>
+                                        <br>    
+                                        ${formule.descrpition}</a>
                                 </span> 
                                 <br>Prix : 
                                 <fmt:setLocale value="fr_FR" scope="session" />
@@ -199,6 +199,8 @@
             </div>
         </div>
     </div>
+
+    <%@include file="/WEB-INF/menus/aide.jsp" %>
 </div>
 
 <script>

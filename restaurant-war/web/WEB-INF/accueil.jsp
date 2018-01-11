@@ -7,10 +7,10 @@
 
 <!--==============================Content=================================-->
 
-<div class="content">
+<div class="content" style="padding-bottom: 0">
     <div class="ic">More Website Templates @ TemplateMonster.com - December 02, 2017!</div>
 
-    <a href="${carte}" class="block1">
+    <a href="${carte}&type-plat=nouilles-legumes" class="block1">
         <img src="images/pates-de-riz-sautees-aux-legumes.jpg" alt="Pates aux Legumes">
         <span class="price">
             <span>${patesLegumes.nomProduit}</span>
@@ -21,7 +21,7 @@
             <strong></strong>
         </span>
     </a>
-    <a href="${carte}" class="block1">
+    <a href="${carte}?type-plat=nouilles-poulet" class="block1">
         <img src="images/pates-de-riz-sautees-au-poulet.jpg" alt="Pates au poulet">
         <span class="price">
             <span>${patesPoulet.nomProduit}</span>
@@ -31,7 +31,7 @@
             </span><strong></strong>
         </span>
     </a>
-    <a href="${carte}" class="block1">
+    <a href="${carte}?type-plat=riz-cantonnais" class="block1">
         <img src="images/riz-cantonnais-long.jpg" alt="Riz cantonnais">
         <span class="price">
             <span>${rizCantonnais.nomProduit}</span>
@@ -58,7 +58,7 @@
                     <span>${ingredient.nomIngredient}, </span>
                 </c:forEach> ...
                 <br>
-                <a href="#">Plus d'infos</a>
+                <a href="#" onclick="alert('Hello World');">Plus d'infos</a>
             </div>
         </div>
         <div class="grid_3">
@@ -108,6 +108,8 @@
             </div>
         </div>
     </div>
+
+    <%@include file="/WEB-INF/menus/aide.jsp" %>
 </div>
 
 <script>

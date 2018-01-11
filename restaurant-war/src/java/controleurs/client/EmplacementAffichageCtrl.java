@@ -31,7 +31,6 @@ public class EmplacementAffichageCtrl implements SousControleur {
             
             List<Emplacement> emplacements = gestionEmplacement.findAllTables();
             
-            System.out.println(">>>>>> Tables du resto: ");
             request.setAttribute("emplacements", emplacements);
             // System.out.println(gestionEmplacement.findAllTablessByStatut(6001));
             // System.out.println(gestionEmplacement.findTableByNum("seat1A"));

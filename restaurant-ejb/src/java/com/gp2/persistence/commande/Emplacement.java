@@ -7,8 +7,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
@@ -23,7 +21,8 @@ import javax.persistence.OneToMany;
 @NamedQueries({
     @NamedQuery(name = "com2.gp2.persistence.commande.findAllEmplacements", query = "SELECT DISTINCT empl FROM Emplacement empl WHERE empl.numeroTable LIKE 'seat%'"),
     @NamedQuery(name = "com2.gp2.persistence.commande.findEmplacementByNum", query = "SELECT DISTINCT empl FROM Emplacement empl WHERE empl.numeroTable = :paramNumTable"),
-    @NamedQuery(name = "com2.gp2.persistence.commande.findAllEmplacementsByStatut", query = "SELECT DISTINCT empl FROM Emplacement empl WHERE empl.statut.id = :paramIdStatut AND empl.numeroTable LIKE 'seat%'")
+    @NamedQuery(name = "com2.gp2.persistence.commande.findAllEmplacementsByStatut", query = "SELECT DISTINCT empl FROM Emplacement empl WHERE empl.statut.id = :paramIdStatut AND empl.numeroTable LIKE 'seat%'"),
+    @NamedQuery(name = "com2.gp2.persistence.commande.findAllTerminals", query = "SELECT DISTINCT empl FROM Emplacement empl WHERE empl.statut.id = :paramIdStatut AND empl.numeroTable LIKE 'terminal%'")
 })
 public class Emplacement implements Serializable {
 
@@ -41,6 +40,11 @@ public class Emplacement implements Serializable {
 
     public Emplacement() {
         commandes = new ArrayList<>();
+    }
+
+    public Emplacement(String numeroTable) {
+        this();
+        this.numeroTable = numeroTable;
     }
 
     public Emplacement(String numeroTable, int capacite) {
