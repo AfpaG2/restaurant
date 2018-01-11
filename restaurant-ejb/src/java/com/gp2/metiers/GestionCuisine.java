@@ -68,7 +68,7 @@ public class GestionCuisine implements GestionCuisineLocal {
             Query query = em.createNamedQuery("com.gp2.persistence.Statut.findStatutByValeur");
             query.setParameter("paramValeurStatut", valeurStatut.trim());            
             Statut statut = (Statut) query.getSingleResult();
-            
+            System.out.println(statut.getId());
             if (statut.getValeurStatut().equals(lc.getStatut().getValeurStatut())) {
                 lc.setStatut(statut);
             }

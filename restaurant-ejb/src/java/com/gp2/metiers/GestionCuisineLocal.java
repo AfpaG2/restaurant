@@ -20,9 +20,9 @@ public interface GestionCuisineLocal {
 
     public Collection<Commande> findCommandeByStatut(String idStatut) throws CustomedException;
 
-    public void changerStatutLigneCommande(String idStatut, String idLigneCommande) throws CustomedException;
+    public void changerStatutLigneCommande(String valeurStatut, String idLigneCommande) throws CustomedException;
 
-    public void changerStatutCommande(String idStatut, String idCommande) throws CustomedException;
+    public void changerStatutCommande(String valeurStatut, String idCommande) throws CustomedException;
 
     public Collection<Statut> findAllStatutCommande();
 

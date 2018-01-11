@@ -27,11 +27,12 @@
                                 <td>${lc.quantite}</td>
                                 <td>${lc.statut.valeurStatut}</td>
                                 <td>
-                                    <form name="statutLC">
+                                    <c:url value="FrontControleur?section=cuisinier-changerStatut-Lignecommande&ligneCommande=${lc.id}" var="urllc" />
+                                    <form name="statutLC" action="${urllc}" method="POST">
                                         <c:forEach items="${statutLigneCommandes}" var="slc">
                                             <input type="radio" name="statutLigneCommande${lc.id}" value="${slc.valeurStatut}" >${slc.valeurStatut}
                                         </c:forEach>  
-                                        <input type="button" name="changerStatutLC" value="Changer Statut" onClick="changerStatutLigneCommande(${lc.id})"> 
+                                        <input type="submit" name="DoIt" value="Changer Statut" > 
                                     </form>  
                                     
                                 </td>
