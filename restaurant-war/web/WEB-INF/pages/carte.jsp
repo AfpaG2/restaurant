@@ -187,8 +187,8 @@
                                 <fmt:formatNumber value="${formule.prixTTC}" type="currency" /> 
                             </div>
                             <h4>
-                                <c:url value="FrontControleur?section=panier-operations&origine=catalogue&action=add&ref=${formule.id}" var="panierOperation" />
-                                <a href="${panierOperation}" class="ajouterAuPanier" onclick="modifierMenuPanier('${panierOperation}'); return false;">Ajouter au Panier</a>
+                                <c:url value="FrontControleur?section=catalogue&category=formule&ref=${formule.id}" var="voirDetail" />
+                                <a href="${voirDetail}" class="ajouterAuPanier">Voir Detail</a>
                             </h4>
                         </div>
 

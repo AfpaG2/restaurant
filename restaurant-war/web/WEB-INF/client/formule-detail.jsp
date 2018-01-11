@@ -20,7 +20,10 @@
                         </div>    
                     </div>
                     <div class="div-tabs">
-                        <div  id="tab-1" class="tab-content gallery1">                            
+                        <div  id="tab-1" class="tab-content gallery1">  
+                            <c:url value="FrontControleur?section=panier-operations&origine=formule&action=add" var="urllc" />
+                                    <form name="statutLC" action="${urllc}" method="POST">  
+                            
                             <c:forEach items="${map.keySet()}" var="key">
 
                                 <div class="grid_12">
@@ -28,21 +31,28 @@
                                 </div>   
 
                                 <div class="grid_12">
-
+                                      
                                     <c:forEach items="${map.get(key)}" var="p">
                                         <div class="grid_3">
                                             <c:url value="FrontControleur?section=catalogue&category=produit&ref=${p.id}" var="urlf" />
                                             <a href="${urlf}" class="gal"><img src="/restaurant-war/images/${p.image}" alt=""><span></span></a>
-                                            ${p.nomProduit}<br> 
+                                            <input type="radio" name="ref${p.id}" value="${p.id}" >${p.nomProduit}<br> 
                                             <div class="col2"><span class="col3">                                            
                                                     <a href="${urlf}">Voir detail</a>
                                                 </span> $ ${p.prixTTC}
                                             </div>
                                         </div>
-                                    </c:forEach> 
+                                            
+                                    </c:forEach> .
+                                    
+                                    
                                 </div>  
 
-                            </c:forEach>  
+                            </c:forEach> 
+                                        <br>
+                            <input type="submit" name="DoIt" value="Ajouter au panier" > 
+                                    </form>  
+                            
                         </div>
                     </div>
                 </div>
