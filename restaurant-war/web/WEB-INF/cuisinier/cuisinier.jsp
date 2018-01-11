@@ -22,16 +22,18 @@
                     <tbody>
                         <c:forEach items="${c.ligneCommandes}" var="lc">
                             <tr>
-                                <td>${lc.nomProduit}</td>
+                                <td>${lc.produit.nomProduit}</td>
                                 <td>${lc.id}</td>
                                 <td>${lc.quantite}</td>
-                                <td>${lc.statut}</td>
+                                <td>${lc.statut.valeurStatut}</td>
                                 <td>
-                                    <c:forEach items="${statutLigneCommandes}" var="slc">
-                                        <input type="radio" name="statutLigneCommande" value="${slc.valeurStatut}" checked><br>
-                                    </c:forEach>                                  
-                                    <c:url value="FrontControleur?section=changerStatut-ligneCommande&ligneCommande=${lc.id}&statut=${slc.valeurStatut}" var="urlp" />
-                                    <a href="${urlp}"> Changer Statut </a> 
+                                    <form name="statutLC">
+                                        <c:forEach items="${statutLigneCommandes}" var="slc">
+                                            <input type="radio" name="statutLigneCommande${lc.id}" value="${slc.valeurStatut}" >${slc.valeurStatut}
+                                        </c:forEach>  
+                                        <input type="button" name="changerStatutLC" value="Changer Statut" onClick="changerStatutLigneCommande(${lc.id})"> 
+                                    </form>  
+                                    
                                 </td>
                             </tr>
                         </c:forEach>
@@ -40,12 +42,12 @@
                         <tr>
                             <td colspan="2">
                                 <c:forEach items="${statutCommandes}" var="sc">
-                                        <input type="radio" name="statutLigneCommande" value="${sc.valeurStatut}" checked><br>
-                                    </c:forEach> 
-                                 </td>
-                                 <td>
-                                    <c:url value="FrontControleur?section=changerStatut-commande&commande=${c.id}&statut=${sc.valeurStatut}" var="urlp" />
-                                    <a href="${urlp}"> Changer Statut </a> 
+                                    <input type="radio" name="statutCommande${c.id}" value="${sc.valeurStatut}" checked>${sc.valeurStatut}
+                                </c:forEach> 
+                            </td>
+                            <td>
+                                <c:url value="FrontControleur?section=changerStatut-commande&commande=${c.id}&statut=${sc.valeurStatut}" var="urlp" />
+                                <a href="${urlp}"> Changer Statut </a> 
                             </td>
                         </tr>
                     </tfoot> 
@@ -56,4 +58,10 @@
         </div> 
     </div>
 </div> 
+
 <jsp:directive.include file="/WEB-INF/menus/newfooter.jsp" />
+
+
+
+
+

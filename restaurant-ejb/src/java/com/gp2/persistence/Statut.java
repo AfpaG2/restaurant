@@ -24,7 +24,8 @@ import javax.persistence.OneToMany;
 @Entity
 @NamedQueries({    
     @NamedQuery(name = "com.gp2.persistence.Statut.findAllStatutCommande", query = "SELECT s FROM Statut AS s WHERE s.id >=1001 and s.id<1010"),
-    @NamedQuery(name = "com.gp2.persistence.Statut.findAllStatutLigneCommande", query = "SELECT s FROM Statut AS s WHERE s.id >=2001 and s.id<2010")
+    @NamedQuery(name = "com.gp2.persistence.Statut.findAllStatutLigneCommande", query = "SELECT s FROM Statut AS s WHERE s.id >=2001 and s.id<2010"),
+    @NamedQuery(name = "com.gp2.persistence.Statut.findStatutByValeur", query = "SELECT s FROM Statut AS s WHERE s.valeurStatut =:paramValeurStatut")
 })
 public class Statut implements Serializable {
     private static final long serialVersionUID = 1L;

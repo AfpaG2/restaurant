@@ -31,7 +31,7 @@ import javax.persistence.TemporalType;
 @Entity
 @NamedQueries({
     @NamedQuery(name = "com.gp2.persistence.carte.findCommandeById", query = "SELECT DISTINCT c FROM Commande as C where c.id = :idCommande"),
-    @NamedQuery(name = "com.gp2.persistence.commande.findCommandeEnCuisine", query = "SELECT c FROM Commande AS c join c.statut s WHERE s.id =:paramIdStatut")
+    @NamedQuery(name = "com.gp2.persistence.commande.Commande.findCommandeEnCuisine", query = "SELECT c FROM Commande AS c join c.statut s WHERE s.id =:paramIdStatut")
 })
 public class Commande implements Serializable {
     private static final long serialVersionUID = 1L;

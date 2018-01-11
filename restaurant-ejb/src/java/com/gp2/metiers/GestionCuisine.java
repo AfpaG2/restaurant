@@ -36,14 +36,23 @@ public class GestionCuisine implements GestionCuisineLocal {
             throw new CustomedException("Le format de la ligne commande n'est pas valide");
         }
 
-        Query query = em.createNamedQuery("com.gp2.persistence.commande.findCommandeEnCuisine");
+        Query query = em.createNamedQuery("com.gp2.persistence.commande.Commande.findCommandeEnCuisine");
         query.setParameter("paramIdStatut", idStatu);
-        return query.getResultList();
+        Collection<Commande> listCommande = query.getResultList();
+        
+        for(Commande commande :listCommande){
+            query = em.createNamedQuery("com.gp2.persistence.commande.LigneCommande.findLigneCommandeByCommande");
+            query.setParameter("paramIdCommande", commande.getId());
+            Collection<LigneCommande> listLigneCommande = query.getResultList();
+            commande.getLigneCommandes().clear();
+            commande.getLigneCommandes().addAll(listLigneCommande);
+        }
+        return listCommande;
 
     }
 
-    public void changerStatutLigneCommande(String idStatut, String idLigneCommande) throws CustomedException {
-        if (idStatut.isEmpty() || idLigneCommande.isEmpty()) {
+    public void changerStatutLigneCommande(String valeurStatut, String idLigneCommande) throws CustomedException {
+        if (valeurStatut.isEmpty() || idLigneCommande.isEmpty()) {
             throw new CustomedException("L'idStatut ou idLigneCommande sont inconnus");
         }
         Long idLigneCommandeM = 0L;
@@ -52,22 +61,21 @@ public class GestionCuisine implements GestionCuisineLocal {
         } catch (NumberFormatException ex) {
             throw new CustomedException("Le format de la ligne de commande n'est pas valide");
         }
-        Integer idStatutM = 0;
-        try {
-            idStatutM = Integer.valueOf(idStatut);
-        } catch (NumberFormatException ex) {
-            throw new CustomedException("Le numéro de statut n'est pas valide");
-        }
-        if (idStatutM >= 2001 && idStatutM < 2010) {
+        
+        
             LigneCommande lc = em.find(LigneCommande.class, idLigneCommandeM);
-            Statut statut = em.find(Statut.class, idStatutM);
-            if (statut.getId() != (lc.getStatut().getId())) {
+            
+            Query query = em.createNamedQuery("com.gp2.persistence.Statut.findStatutByValeur");
+            query.setParameter("paramValeurStatut", valeurStatut.trim());            
+            Statut statut = (Statut) query.getSingleResult();
+            
+            if (statut.getValeurStatut().equals(lc.getStatut().getValeurStatut())) {
                 lc.setStatut(statut);
             }
             em.merge(lc);
         }
 
-    }
+    
 
     public void changerStatutCommande(String idStatut, String idCommande) throws CustomedException {
         if (idStatut.isEmpty() || idCommande.isEmpty()) {
