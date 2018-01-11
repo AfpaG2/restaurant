@@ -301,13 +301,13 @@
             <div class="news">
                 <time datetime="2018-02-14">Fév<span>14</span></time>
                 <div class="extra_wrapper">
-                    <p class="col1"><a href="#">Saint-Valentin<br>A ne pas manquer ! </a></p>En amoureux, plusieurs surprises vous attendent. <br>Plus d'infos chez <a href=#>Minh Thuong</a>
+                    <p class="col1"><a href="#" class="col2">Saint-Valentin<br>A ne pas manquer ! </a></p>En amoureux, plusieurs surprises vous attendent. <br>Plus d'infos chez <a href=# class="col2">Minh Thuong</a>
                 </div>
             </div>
             <div class="news">
                 <time datetime="2018-04-02">Avril<span>02</span></time>
                 <div class="extra_wrapper">
-                    <p class="col1"><a href="#">Joyeuses Pâques</a></p>Venez fêter avec nous, plusieurs avantages et réductions. <br>Plus d'infos chez <a href=#>Minh Thuong</a>
+                    <p class="col1"><a href="#" class="col2">Joyeuses Pâques</a></p>Venez fêter avec nous, plusieurs avantages et réductions. <br>Plus d'infos chez <a href=# class="col2">Minh Thuong</a>
                 </div>
             </div>
         </div>

@@ -83,7 +83,7 @@ public class CreationData implements CreationDataLocal {
         Emplacement Empl01 = new Emplacement("seat1A",2);
         Empl01.setStatut(statut6002);
         Emplacement Empl02 = new Emplacement("seat1B",2);
-        Empl02.setStatut(statut6003);
+        Empl02.setStatut(statut6001);
         Emplacement Empl03 = new Emplacement("seat1C",2);
         Empl03.setStatut(statut6001);
         Emplacement Empl04 = new Emplacement("seat1D",2);
@@ -117,13 +117,13 @@ public class CreationData implements CreationDataLocal {
         Empl17.setStatut(statut6001);
         Emplacement Empl18 = new Emplacement("terminal1C1D");
         Empl18.setStatut(statut6001);        
-        Emplacement Empl19 = new Emplacement("terminal2A2C");
+        Emplacement Empl19 = new Emplacement("terminal2A2B");
         Empl19.setStatut(statut6001);
-        Emplacement Empl20 = new Emplacement("terminal2B2D");
+        Emplacement Empl20 = new Emplacement("terminal2C2D");
         Empl20.setStatut(statut6001);
         Emplacement Empl21 = new Emplacement("terminal3A3C");
         Empl21.setStatut(statut6001);
-        Emplacement Empl22 = new Emplacement("terminal3B3D");
+        Emplacement Empl22 = new Emplacement("terminal3B3B");
         Empl22.setStatut(statut6001);
         Emplacement Empl23 = new Emplacement("terminal4A4C");
         Empl23.setStatut(statut6001);

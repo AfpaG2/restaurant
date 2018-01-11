@@ -8,12 +8,16 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <div class="grid_1212" style="text-align: center; padding: 60px 15px 30px">
-    <c:url value="FrontControleur?section=serveur-interface-affichage" var="aideServeur" />
+    <c:url value="#" var="aideServeur" />
     <a href="${aideServeur}" >
         
         <div style="margin-bottom: 20px; font: 24px/20px 'Open Sans', sans-serif;">Vous pouvez faire appel à un serveur en appuyant sur le bouton suivant.</div>
-        <img src="images/besoin-aide.jpg" alt="Appeler Serveur" onclick="confirm('Merci de confirmer l\'appel d\'un serveur');" />
+        <img src="images/besoin-aide.jpg" alt="Appeler Serveur" onclick="confirm('Merci de confirmer l\'appel d\'un serveur'); myFunction()" />
         
         <c:set var="aide" value="Le client sur le terminal No... a besoin de votre aide" scope="application"/>
+        
+        <div ></div>
+        
     </a>
+        <script>function myFunction() {alert("Un serveur viendra à vous dans les plus brefs délais")}</script>
 </div>

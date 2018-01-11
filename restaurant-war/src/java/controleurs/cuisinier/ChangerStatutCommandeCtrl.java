@@ -29,7 +29,7 @@ public class ChangerStatutCommandeCtrl implements SousControleur {
         
         String idcommande = request.getParameter("idCommande");
         String valeurStatut = request.getParameter("statutCommande"+idcommande);
-            
+
         if (valeurStatut != null && idcommande != null) {
             
             try {

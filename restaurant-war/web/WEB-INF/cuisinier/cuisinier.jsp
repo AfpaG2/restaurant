@@ -56,10 +56,8 @@
                                     <input type="submit" name="DoIt" value="Changer Statut" > 
                                 </form>  
                             </td>
-
                             <td></td>
                             <td></td>
-
                         </tr>
                     </tfoot> 
 
@@ -71,3 +69,8 @@
 </div> 
 
 <jsp:directive.include file="/WEB-INF/menus/newfooter.jsp" />
+
+
+
+
+
