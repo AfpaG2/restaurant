@@ -6,6 +6,8 @@ public class LignePanier implements Serializable {
 
     private Produit produit;
     private int qte;
+    private boolean formule;
+    private float prixFormule;
 
     public LignePanier() {
     }
@@ -41,11 +43,33 @@ public class LignePanier implements Serializable {
     }
 
     public float getPrixHT() {
+        if(this.formule){
+            return this.prixFormule;
+        } else
         return produit.getPrix() * qte;
     }
 
     public float getPrixTTC() {
         return produit.getPrixTTC() * qte;
     }
+
+    public boolean isFormule() {
+        return formule;
+    }
+
+    public void setFormule(boolean formule) {
+        this.formule = formule;
+    }
+
+    public float getPrixFormule() {
+        return prixFormule;
+    }
+
+    public void setPrixFormule(float prixFormule) {
+        this.prixFormule = prixFormule;
+    }
+    
+    
+    
 
 }

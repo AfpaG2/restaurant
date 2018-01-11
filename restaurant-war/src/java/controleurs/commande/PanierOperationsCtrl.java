@@ -7,6 +7,7 @@ package controleurs.commande;
 
 import com.gp2.metiers.GestionPanierLocal;
 import controleurs.SousControleur;
+import java.util.Enumeration;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.naming.Context;
@@ -20,23 +21,37 @@ import javax.servlet.http.HttpSession;
  *
  * @author cdi307
  */
-public class PanierOperationsCtrl implements SousControleur{
+public class PanierOperationsCtrl implements SousControleur {
+
     @Override
-    public String executer(HttpServletRequest request, HttpServletResponse response) {HttpSession session = request.getSession();
-        
+    public String executer(HttpServletRequest request, HttpServletResponse response) {
+        HttpSession session = request.getSession();
+
         String action = request.getParameter("action");
         String origine = request.getParameter("origine");
         String reference = request.getParameter("ref");
-        String page="/WEB-INF/accueil.jsp";
-        
+        String page = "/WEB-INF/accueil.jsp";
+
         if (session.getAttribute("gestionPanier") == null) {
             session.setAttribute("gestionPanier", lookupGestionPanierLocal());
         }
         GestionPanierLocal gestionPanier = (GestionPanierLocal) session.getAttribute("gestionPanier");
 
-        
         if ("add".equals(action)) {
-            gestionPanier.ajouter(reference);
+            if ("formule".equals(origine)) {
+                Enumeration names = request.getParameterNames();
+                for (int i = 0; names.hasMoreElements(); i++) {
+                    String name = (String) names.nextElement();
+                    if ("ref".equals(name.substring(0, 3))) {
+                        reference = request.getParameter(name);
+                       gestionPanier.ajouter(reference);
+                    }
+                }
+
+            } else {
+
+                gestionPanier.ajouter(reference);
+            }
         }
         if ("dec".equals(action)) {
             gestionPanier.enlever(reference);
@@ -44,7 +59,11 @@ public class PanierOperationsCtrl implements SousControleur{
         if ("supp".equals(action)) {
             gestionPanier.supprimer(reference);
         }
-        
+
+        if ("formule".equals(origine)) {
+            page = "FrontControleur?section=carte";
+        }
+
         if ("catalogue".equals(origine)) {
             page = "FrontControleur?section=carte";
         }
@@ -65,5 +84,5 @@ public class PanierOperationsCtrl implements SousControleur{
             throw new RuntimeException(ne);
         }
     }
-    
+
 }

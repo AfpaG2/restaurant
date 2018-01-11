@@ -14,6 +14,7 @@ import com.gp2.persistence.company.Restaurant;
 import com.gp2.persistence.carte.Carte;
 import com.gp2.persistence.carte.TypePlat;
 import com.gp2.persistence.commande.Commande;
+import com.gp2.persistence.commande.InfosCuisine;
 import com.gp2.persistence.commande.LigneCommande;
 import com.gp2.persistence.company.Role;
 import java.util.Date;
@@ -41,6 +42,17 @@ public class CreationData implements CreationDataLocal {
        
         //Carte
         Carte carte = new Carte();
+        
+        InfosCuisine cuisinable= new InfosCuisine("Cuisinable","oui");
+        InfosCuisine cuisson1= new InfosCuisine("Cuisson","Bleu");        
+        InfosCuisine cuisson2= new InfosCuisine("Cuisson","Saignant");
+        InfosCuisine cuisson3= new InfosCuisine("Cuisson","A point");
+        InfosCuisine cuisson4= new InfosCuisine("Cuisson","Bien cuit");
+        
+        
+        
+        
+        
         
         
         
@@ -964,11 +976,20 @@ public class CreationData implements CreationDataLocal {
         produ6.setStock(10);
         produ6.setCodeTVA(tva10);
         viandes.getProduits().add(produ6);
+        produ6.getInfosCuisines().add(cuisson4);
+        produ6.getInfosCuisines().add(cuisson1);
+        produ6.getInfosCuisines().add(cuisson2);
+        produ6.getInfosCuisines().add(cuisson3);
+        
         
         Produit produ7 = new Produit("Porc au Caramel", 15.00f,"tit-kho-porc-au-caramel-vietnamien.jpg");
         produ7.setStock(10);
         produ7.setCodeTVA(tva10);
         viandes.getProduits().add(produ7);
+        produ7.getInfosCuisines().add(cuisson4);
+        produ7.getInfosCuisines().add(cuisson1);
+        produ7.getInfosCuisines().add(cuisson2);
+        produ7.getInfosCuisines().add(cuisson3);
         
         Produit produ8 = new Produit("Nems de Courgette", 9.80f,"nems-de-courgette-maison.jpg");
         produ8.setStock(10);
@@ -979,6 +1000,10 @@ public class CreationData implements CreationDataLocal {
         produ9.setStock(10);
         produ9.setCodeTVA(tva10);
         viandes.getProduits().add(produ9);
+        produ9.getInfosCuisines().add(cuisson4);
+        produ9.getInfosCuisines().add(cuisson1);
+        produ9.getInfosCuisines().add(cuisson2);
+        produ9.getInfosCuisines().add(cuisson3);
         
         Produit produ10 = new Produit("Soupe Won Ton", 9.80f,"soupe-won-ton.jpg");
         produ10.setStock(10);

@@ -45,6 +45,7 @@ public class GestionPanier implements GestionPanierLocal {
         }else{            
             Long referenceLong = new Long(reference);            
             Produit p = em.find(Produit.class, referenceLong);
+            
             try{
                 LignePanier nlp = new LignePanier(p);
                 panier.put(reference, nlp);
