@@ -1,17 +1,32 @@
 <%-- 
-    Document   : serveur
-    Created on : 4 janv. 2018, 09:31:32
-    Author     : youssef
+   Document   : index-1
+    Created on : Jan 2, 2018, 8:34:56 PM
+    Author     : Ibrahim Kelani <ibrahim.kelani@gmail.com>
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Interface Serveur</title>
-    </head>
-    <body>
-        <h1>Interface Serveur à faire !</h1>
-    </body>
-</html>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
+<jsp:directive.include file="/WEB-INF/menus/header.jsp" />
+
+<!--==============================Content=================================-->
+<div style="align:center;"> Bienvenue  ! <br></div>
+
+
+
+
+
+
+<script>
+    $(document).ready(function () {
+
+        $().UItoTop({easingType: 'easeOutQuart'});
+        $('.gallery a.gal').touchTouch();
+
+    });
+</script>
+
+<jsp:directive.include file="/WEB-INF/menus/newfooter.jsp" />
+

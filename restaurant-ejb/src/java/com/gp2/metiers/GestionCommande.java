@@ -5,7 +5,10 @@ import com.gp2.persistence.carte.LignePanier;
 import com.gp2.persistence.commande.Commande;
 import com.gp2.persistence.commande.Emplacement;
 import com.gp2.persistence.commande.LigneCommande;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -40,33 +43,41 @@ public class GestionCommande implements GestionCommandeLocal {
         Collection<Commande> listCommande = query.getResultList();
         return listCommande;
     }
-
-    @Override
-    public Commande validerCommande(Collection<LignePanier> lp, String numTable) {
+    
+    public Commande validerCommande(Collection<LignePanier> lp, String numTable){
+        System.out.println("coucou ligne panier : "+lp);
         Commande com = new Commande();
+        Statut stat = em.find(Statut.class, 1001);
+        Emplacement place = em.find(Emplacement.class, numTable);
+        com.setEmplacement(place);
+        Date date = new Date();
+        com.setDateCommande(date);
+        Collection<LigneCommande> lc = new ArrayList<>();
         for (LignePanier lignePanier : lp) {
             try {
-                Emplacement place = em.find(Emplacement.class, numTable);
-                Statut statut = em.find(Statut.class, 1001);
-                LigneCommande ligne = new LigneCommande();
-                ligne.setPrixHT(lignePanier.getPrixHT());
-                ligne.setQuantite(lignePanier.getQte());
-                ligne.setProduit(lignePanier.getProduit());
-                com.setEmplacement(place);
-                com.setStatut(statut);
-                com.getLigneCommandes().add(ligne);
+            LigneCommande ligne = new LigneCommande();
+            ligne.setPrixHT(lignePanier.getPrixHT());
+                System.out.println(lignePanier.getQte());
+            ligne.setQuantite(lignePanier.getQte());
+            ligne.setCommande(com);
+            ligne.setProduit(lignePanier.getProduit());
+            ligne.setStatut(stat);
+            em.merge(ligne);
+            //com.setStatut(statut);
+            lc.add(ligne);
             } catch (Exception e) {
                 System.out.println("erreur validation commander : " + e.getMessage());
             }
         }
-
-        em.persist(com);
+        com.setLigneCommandes(lc);
+       
+        
         return com;
     }
-
-    @Override
-    public Commande changeStatutCommande(Commande commande, Statut statut) {
-        Commande com = em.find(Commande.class, commande.getId());
+    
+    
+    public Commande changeStatutCommande(Commande commande, Statut statut){
+        Commande com= em.find(Commande.class, commande.getId());
         com.setStatut(statut);
         em.merge(com);
         return com;

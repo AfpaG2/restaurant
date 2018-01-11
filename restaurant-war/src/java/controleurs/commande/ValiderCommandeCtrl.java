@@ -11,6 +11,7 @@ import com.gp2.metiers.GestionPanierLocal;
 import com.gp2.persistence.carte.LignePanier;
 import com.gp2.persistence.commande.Commande;
 import controleurs.SousControleur;
+import java.lang.reflect.Proxy;
 import java.util.Collection;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -39,10 +40,12 @@ public class ValiderCommandeCtrl implements SousControleur{
         
         
        GestionPanierLocal lpc =   (GestionPanierLocal) session.getAttribute("gestionPanier");
-       Collection<LignePanier>lp = lpc.getListe();
-       System.out.println("ibraa "+lpc);
-       Commande com = gestionCommande.validerCommande(lp,"5");
-        session.setAttribute("commande", com);
+       Collection<LignePanier> lp = lpc.getListe();
+       System.out.println("ibraa "+lp.toString());
+       // Commande com = gestionCommande.validerCommande(lp,"seat4C");
+       Commande com = gestionCommande.validerCommande(lp,"seat4C");
+       request.setAttribute("commande", com.getLigneCommandes());
+        System.out.println("VECTEUR : " + com.getLigneCommandes());
         return page;
     }
 
