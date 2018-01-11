@@ -1,4 +1,3 @@
-
 package com.gp2.metiers;
 
 import com.gp2.persistence.Statut;
@@ -21,23 +20,28 @@ import javax.persistence.Query;
  */
 @Stateless
 public class GestionCommande implements GestionCommandeLocal {
+
     @PersistenceContext(unitName = "restaurant-ejbPU")
     private EntityManager em;
-    
-    
-    public Commande createCommande(Commande uneCommande){
-        em.persist(uneCommande); 
+
+    @Override
+    public Commande createCommande(Commande uneCommande) {
+        em.persist(uneCommande);
         return uneCommande;
     }
-    public Commande getCommande(String id){
+
+    @Override
+    public Commande getCommande(String id) {
         Query query = em.createNamedQuery("com.gp2.persistence.findCommandeById", Commande.class);
         Commande commande = (Commande) query.setParameter("idCommande", id);
-            return commande;
+        return commande;
     }
-    public Collection<Commande> getAllCommandes(){
+
+    @Override
+    public Collection<Commande> getAllCommandes() {
         Query query = em.createNamedQuery("com.gp2.persistence.getAllCommandes", Commande.class);
         Collection<Commande> listCommande = query.getResultList();
-        return listCommande; 
+        return listCommande;
     }
     
     public Commande validerCommande(Collection<LignePanier> lp, String numTable){
@@ -62,7 +66,7 @@ public class GestionCommande implements GestionCommandeLocal {
             //com.setStatut(statut);
             lc.add(ligne);
             } catch (Exception e) {
-                System.out.println("erreur validation commander : "+e.getMessage());
+                System.out.println("erreur validation commander : " + e.getMessage());
             }
         }
         com.setLigneCommandes(lc);
@@ -78,12 +82,14 @@ public class GestionCommande implements GestionCommandeLocal {
         em.merge(com);
         return com;
     }
-    public Boolean modifierCommande(Commande commande){
+
+    @Override
+    public Boolean modifierCommande(Commande commande) {
         Query query = em.createNamedQuery("com.gp2.persistence.findCommandeById", Commande.class);
         try {
-        Commande com = (Commande) query.setParameter("idCommande", commande.getId());
-        com = commande;
-        em.merge(com);
+            Commande com = (Commande) query.setParameter("idCommande", commande.getId());
+            com = commande;
+            em.merge(com);
         } catch (Exception e) {
             System.out.println("Commande introuvable (sorry !!!)");
         }
@@ -99,6 +105,7 @@ public class GestionCommande implements GestionCommandeLocal {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    @Override
     public Commande validerCommande(Collection<LignePanier> lp) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }

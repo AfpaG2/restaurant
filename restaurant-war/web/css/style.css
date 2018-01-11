@@ -9,6 +9,57 @@
 
 @import "../css/font-awesome.css";
 
+table {
+  width:98%;
+  margin:0 auto;
+  border-bottom:3px #eee solid;
+  border-collapse:collapse;
+  font-size:12px
+}
+th, td {
+  padding:5px 10px
+}
+caption {
+  font-weight:bold;
+  font-size:24px;
+  padding:5px; 
+  color:#1BA6B2; 
+  text-align:left;
+  margin-bottom:5px
+}
+thead th {
+  background:#ABC668;
+  color:#fff;
+  border-right:1px solid #fff
+}
+thead th:last-child {
+  border-right:none
+}
+tbody th {
+  width:10%
+}
+tbody tr:nth-child(even) {
+  background:#eee
+}
+tbody tr:nth-child(even) th {
+  background:#ddd
+}
+tbody tr:hover {
+  background:#F3F5BB
+}
+tbody tr:hover th {
+  background:#F2F684; 
+  color:#1BA6B2
+}
+tfoot tr {
+  border-top:6px solid #E9F7F6; 
+  color:#1BA6B2
+}
+
+
+
+
+
 .seats {
     display: flex;
     flex-direction: row;
@@ -161,6 +212,20 @@
     width: 730px
 }
 
+.ajouterAuPanier {
+    display: block;
+    width: 125px;
+    height: 25px;
+    background: #009fb3;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    margin-left: 2.7em;
+    margin-top: 1em
+}
+
 @-webkit-keyframes rubberBand {
   0% {
     -webkit-transform: scale3d(1, 1, 1);
@@ -240,19 +305,6 @@ input {
     border-radius: 0 !important;
 }
 
-.button {
-    display: block;
-    width: 125px;
-    height: 25px;
-    background: #009fb3;
-    padding: 10px;
-    text-align: center;
-    border-radius: 5px;
-    color: white;
-    font-weight: bold;
-    margin-left: 2.7em;
-    margin-top: 1em
-}
 
 html {
     width: 100%;
@@ -674,7 +726,7 @@ h1 a img {
     display: block;
     position: absolute;
     content: '';
-    background: url(../images/link_marker.png) right 0 no-repeat;
+    /* background: url(../images/link_marker.png) right 0 no-repeat; */
     right: -27px;
     width: 16px;
     height: 8px;

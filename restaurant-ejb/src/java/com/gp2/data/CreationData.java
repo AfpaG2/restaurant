@@ -819,7 +819,7 @@ public class CreationData implements CreationDataLocal {
         
         
         
-        Produit  prdu3 = new Produit("Phô légumes et boeuf",12.5f,"pho-aux-legumes.jpg");
+        Produit  prdu3 = new Produit("Phô légumes et boeuf",12.5f,"Pho-aux-legumes.jpg");
         prdu3.setStock(10);
         soupes.getProduits().add(prdu3);
         prdu3.getIngredients().add(ing184);
@@ -1458,7 +1458,7 @@ public class CreationData implements CreationDataLocal {
                
         
         Commande com1 = new Commande();
-        com1.setEmplacement(Empl28);
+        com1.setEmplacement(Empl04);
         com1.setStatut(statut1002);
         Date dateCommande1 = new GregorianCalendar(2018, 1, 10).getTime();
         com1.setDateCommande(dateCommande1);
@@ -1479,7 +1479,7 @@ public class CreationData implements CreationDataLocal {
         lc12.setCommande(com1);
         
         Commande com2 = new Commande();
-        com1.setEmplacement(Empl01);
+        com1.setEmplacement(Empl03);
         com1.setStatut(statut1002);
         Date dateCommande2 = new GregorianCalendar(2018, 1, 9).getTime();
         com2.setDateCommande(dateCommande2);

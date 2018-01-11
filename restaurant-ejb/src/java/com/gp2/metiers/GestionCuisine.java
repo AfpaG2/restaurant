@@ -36,7 +36,7 @@ public class GestionCuisine implements GestionCuisineLocal {
             throw new CustomedException("Le format de la ligne commande n'est pas valide");
         }
 
-        Query query = em.createNamedQuery("com.gp2.persistence.carte.findCommandeEnCuisine");
+        Query query = em.createNamedQuery("com.gp2.persistence.commande.findCommandeEnCuisine");
         query.setParameter("paramIdStatut", idStatu);
         return query.getResultList();
 

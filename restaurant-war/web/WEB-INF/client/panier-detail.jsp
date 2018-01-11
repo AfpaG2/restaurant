@@ -11,7 +11,7 @@
                 <div>
             <h1>Panier</h1>
             <table>
-                <table>
+                <caption>Ma commande</caption>
                 <thead>
                     <tr>
                         <th>nom</th>
@@ -39,8 +39,16 @@
                         </tr>
                     </c:forEach>
                 </tbody>
+                <tfoot>
+                    <tr>
+                         <td colspan="2">
+                 <c:url value="FrontControleur?section=valider-commande" var="urlp3" />
+           <a href="${urlp3}"> Valider commande </a>
+           </td>
+            </tr>
+               </tfoot> 
             </table>
-            </table>
+          
         </div> 
             </div>
         </div> 
