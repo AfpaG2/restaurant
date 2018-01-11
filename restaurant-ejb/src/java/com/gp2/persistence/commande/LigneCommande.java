@@ -14,6 +14,7 @@ import java.util.Collection;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -39,7 +40,7 @@ public class LigneCommande implements Serializable {
     @Column(nullable = false) 
     private float prixHT;
     
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE},fetch =FetchType.EAGER )
     private Statut statut;
     
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})

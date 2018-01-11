@@ -1479,8 +1479,8 @@ public class CreationData implements CreationDataLocal {
         lc12.setCommande(com1);
         
         Commande com2 = new Commande();
-        com1.setEmplacement(Empl03);
-        com1.setStatut(statut1002);
+        com2.setEmplacement(Empl03);
+        com2.setStatut(statut1002);
         Date dateCommande2 = new GregorianCalendar(2018, 1, 9).getTime();
         com2.setDateCommande(dateCommande2);
         

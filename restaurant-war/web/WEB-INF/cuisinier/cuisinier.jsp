@@ -27,29 +27,36 @@
                                 <td>${lc.quantite}</td>
                                 <td>${lc.statut.valeurStatut}</td>
                                 <td>
-                                    <c:url value="FrontControleur?section=cuisinier-changerStatut-Lignecommande&ligneCommande=${lc.id}" var="urllc" />
+                                    <c:url value="FrontControleur?section=cuisinier-changerStatut-lignecommande&ligneCommande=${lc.id}" var="urllc" />
                                     <form name="statutLC" action="${urllc}" method="POST">
                                         <c:forEach items="${statutLigneCommandes}" var="slc">
                                             <input type="radio" name="statutLigneCommande${lc.id}" value="${slc.valeurStatut}" >${slc.valeurStatut}
                                         </c:forEach>  
                                         <input type="submit" name="DoIt" value="Changer Statut" > 
                                     </form>  
-                                    
+
                                 </td>
                             </tr>
                         </c:forEach>
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td colspan="2">
-                                <c:forEach items="${statutCommandes}" var="sc">
-                                    <input type="radio" name="statutCommande${c.id}" value="${sc.valeurStatut}" checked>${sc.valeurStatut}
-                                </c:forEach> 
-                            </td>
                             <td>
-                                <c:url value="FrontControleur?section=changerStatut-commande&commande=${c.id}&statut=${sc.valeurStatut}" var="urlp" />
-                                <a href="${urlp}"> Changer Statut </a> 
+                                ${c.statut.valeurStatut}  
+
                             </td>
+
+
+                            <td colspan="2">
+                                <c:url value="FrontControleur?section=cuisinier-changerStatut-commande&idCommande=${c.id}" var="urlc" />
+                                <form name="statutC" action="${urlc}" method="POST">
+                                    <c:forEach items="${statutCommandes}" var="sc">
+                                        <input type="radio" name="statutCommande${c.id}" value="${sc.valeurStatut}" >${sc.valeurStatut}
+                                    </c:forEach> 
+                                    <input type="submit" name="DoIt" value="Changer Statut" > 
+                                </form>  
+                            </td>
+
                         </tr>
                     </tfoot> 
 

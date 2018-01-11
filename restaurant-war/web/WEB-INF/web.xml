@@ -10,7 +10,7 @@
         </init-param>
         
         <init-param>
-            <param-name>cuisinier-changerStatut-Lignecommande</param-name>
+            <param-name>cuisinier-changerStatut-lignecommande</param-name>
             <param-value>controleurs.cuisinier.ChangerStatutLigneCommandeCtrl</param-value>
         </init-param>
         

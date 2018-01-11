@@ -20,16 +20,11 @@ public class ChangerStatutLigneCommandeCtrl implements SousControleur {
         String idLignecommande = request.getParameter("ligneCommande");
         String valeurStatut = request.getParameter("statutLigneCommande"+idLignecommande);
         
-        System.out.println(valeurStatut);
-        System.out.println(idLignecommande);
-                
-        
-        
         if (valeurStatut != null && idLignecommande != null) {
             
             try {
                 gestionCuisine.changerStatutLigneCommande(valeurStatut, idLignecommande);
-                System.out.println(idLignecommande+"ok");
+                
                 page = "FrontControleur?section=cuisinier-interface-affichage";
                 request.setAttribute("redirect", true);
             } catch (CustomedException ex) {
