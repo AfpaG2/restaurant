@@ -2,7 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:directive.include file="/WEB-INF/menus/header.jsp" />
 <!--==============================Content=================================-->
-<div class="content">
+<div class="content" id="content">
     <div class="ic">More Website Templates @ TemplateMonster.com - December 02, 2013!</div>
     <div class="container_12">
         <div>

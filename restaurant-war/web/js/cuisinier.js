@@ -42,11 +42,11 @@ function changerStatutLigneCommande(idCommande) {
 
 setInterval(function actualiserInterfaceCuisine() {
     var xhr = getXhr();
-    var url = "FrontControleur?section=headerCuisine";
+    var url = "FrontControleur?cuisinier-interface-affichage";
     xhr.onreadystatechange = function () {
         if (xhr.status == 200 && xhr.readyState == 4) {
             var txt = xhr.responseText;
-            var elem = document.getElementById("tableauBord");
+            var elem = document.getElementById("content");
             elem.innerHTML = txt;
         }
     };
@@ -54,22 +54,4 @@ setInterval(function actualiserInterfaceCuisine() {
     xhr.send();
 }, 30000);
 
-setInterval(function actualiserSuiviCuisine() {
-    var xhr = getXhr();
-    var params = window.location.search;
-    var tParams = params.split("&");
-    var url = "FrontControleur?section=suiviCommandeCuisine";
-    for (var i = 1; i < tParams.length; i++) {
-        url += "&" + tParams[i];
-    }
-    xhr.onreadystatechange = function () {
-        if (xhr.status == 200 && xhr.readyState == 4) {
-            var txt = xhr.responseText;
-            var elem = document.getElementById("tableauLignesCommande");
-            elem.innerHTML = txt;
-        }
-    };
-    xhr.open("GET", url, true);
-    xhr.send();
-}, 30000);
 
